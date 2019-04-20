@@ -1,0 +1,554 @@
+// 引入全局方法
+@charset "UTF-8";
+@import "./common.less";
+@import "./iconfont.less";
+// @import "./eui.less";
+@import "./vant.less";
+// html{
+// 	.fz(@fontSize);
+// }
+// Global
+html * {
+	outline: 0;
+	-webkit-text-size-adjust: none;
+	.m; .p;
+}
+* {
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	//-webkit-overflow-scrolling: touch;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-text-size-adjust: none;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-style: normal;
+	list-style: none;
+	outline: none;
+	padding: 0;
+	margin: 0;
+}
+input,
+textarea{
+	-webkit-user-select:text;
+	-webkit-touch-callout:default;
+}
+html,body {
+	.posa;
+	.squ(100%);
+	left:0;
+	top:0;
+	// .h(100%);
+    // -webkit-overflow-scrolling: touch;
+    // touch-action: pan-y;
+    // overflow-y: scroll;
+}
+object{
+	pointer-events: none;
+}
+#app{
+	.df;
+	flex-direction: column;
+}
+.flex-content-box{
+	// .h(100%);
+	// min-height:100%;
+	.bc(@white);
+	.df;
+	flex-direction: column;
+	.flex-content{
+		.flex(1);
+		.posa;
+		.w(100%);
+		top:70rem/@fontSize;
+		bottom:0;
+		-webkit-overflow-scrolling: touch;
+		touch-action: pan-y;
+		overflow-y: scroll;
+
+	}
+}
+//::-webkit-scrollbar {/*滚动条整体样式*/
+//	.w(5);     /*高宽分别对应横竖滚动条的尺寸*/
+//	.h(1);
+//}
+//::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+//	.br(5rem/@fontSize);
+//	.box-s(inset 0 0 5rem/@fontSize @gray3);
+//	.bc(@white);
+//}
+//::-webkit-scrollbar-track {/*滚动条里面轨道*/
+//	.box-s(inset 0 0 5rem/@fontSize @gray9);
+//	.br(5rem/@fontSize);
+//	.bc(#EDEDED);
+//}
+ul, li {
+	list-style: none
+}
+a{
+	.c(@themes-bg-c);
+	text-decoration: none;
+	&:hover{
+		text-decoration:underline;
+	}
+}
+// a, a:hover {
+// 	text-decoration: none;
+// }
+img {
+	.db;
+}
+i, em {
+	font-style: normal;
+}
+input, textarea {
+	outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"]{
+  -moz-appearance: textfield;
+}
+
+.turn{
+	.tranf(rotate(180deg));
+}
+.nav-bar;
+.page-content{
+	.pt(50rem/@fontSize);
+}
+.click{
+	.userselect;
+	cursor: pointer;
+	//&:active{
+	//	.bc(@click-bg)!important;
+	//}
+}
+.van-loading{
+	// .posf;
+	// // .wh(100%;100%);
+	// top:50%;
+	// left:50%;
+	// .tranf(translate(-50%,-50%));
+	z-index:9999;
+}
+// .van-popup{
+
+// }
+.van-button{
+	// .lh(44rem/@fontSize);
+	.van-loading{
+		.dib;
+		position:static;
+		.tranf(none)
+	}
+}
+.no-click{
+	cursor: default!important;
+}
+.no-select{
+	.userselect;
+}
+//可点击
+.pointer{
+	cursor: pointer;
+	.userselect;
+	//&:active{
+	//	.bc(@click-bg)!important;
+	//}
+}
+//.disabled{
+//	opacity: .5;
+//}
+
+.e-down,.e-up,.u-normal{
+	.fw(normal);
+	.fz(11);
+	.lh(17);
+	.db;
+	.tc;
+	.p(2rem/@fontSize 0);
+	min-width:60rem/@fontSize;
+	.fl;
+}
+.u-normal{
+	.bc(@normal-c);
+	.c(@white);
+}
+.e-down{
+	.bc(@down-color);
+	.c(@white);
+}
+.e-up{
+	.bc(@up-color);
+	.c(@white);
+}
+.down{
+	.c(@down-color);
+}
+.up{
+	.c(@up-color);
+}
+/**
+动画样式
+**/
+//交易中心深度动画样式
+.anim-act{
+	.anime(animate-act 2s ease 0s 1 alternate);
+}
+.anim-act1{
+	.anime(animate-act1 2s ease 0s 1 alternate);
+}
+//有背景变换
+.anim-up{
+	.anime(animate-up 1s ease 0s 1 alternate);
+}
+.anim-down{
+	.anime(animate-down 1s ease 0s 1 alternate);
+}
+//无背景变换
+.anim-up1{
+	.anime(animate-up1 1s ease 1s 1 alternate);
+}
+.anim-down1{
+	.anime(animate-down1 1s ease 1s 1 alternate);
+}
+.keyframes(animate-act;{
+	from{
+		// .c(@default-txt-c);
+		.box-s(inset 0rem/@fontSize 0rem/@fontSize 1rem/@fontSize 1rem/@fontSize @input-focus);
+	}
+	to{
+		.box-s(inset 0rem/@fontSize 0rem/@fontSize 1rem/@fontSize 1rem/@fontSize rgba(0, 170, 255,0));
+	}
+});
+.keyframes(animate-act1;{
+	from{
+		.bc(@hover-color);
+	}
+	to{
+		.bc(rgba(255, 236, 222,0))
+	}
+});
+.keyframes(animate-up;{
+	from{
+		// .c(@default-txt-c);
+		.c(@white);
+		.bc(@down-color);
+	}
+	to{
+		background: none;
+		.c(@default-txt-c);
+	}
+});
+.keyframes(animate-down;{
+	from{
+		.c(@white);
+		.bc(@up-color);
+	}
+	to{
+		background: none;
+		.c(@default-txt-c);
+	}
+});
+.keyframes(animate-up1;{
+	from{
+		// .c(@default-txt-c);
+		.c(@down-color);
+	}
+	99%{
+		.c(@down-color);
+	}
+	to{
+		// .c(@white);
+		.c(@default-txt-c);
+	}
+});
+.keyframes(animate-down1;{
+	from{
+		// .bc(@default-txt-c);
+		.c(@up-color);
+	}
+	99%{
+		.c(@up-color);
+	}
+	to{
+		// .c(@white);
+		.c(@default-txt-c);
+	}
+});
+// common
+.section {
+	.db;
+	// .oh;
+}
+.clearfix {
+	.cl;
+}
+
+.icon{
+	// .bz(contain);
+	.bp(center);
+	background-repeat: no-repeat;
+	.bi('/static/images/img/icons.png');
+	// .bz(500px 500px);
+	.bz(250rem/@fontSize 250rem/@fontSize);
+	// .wh(24rem/@fontSize; 24rem/@fontSize);
+	// .mt(10rem/@fontSize);
+}
+
+.hide{
+	.db(none);
+}
+.show{
+	.db;
+}
+
+.item-box{
+	.posa;
+	.bc(@pop-bc);
+	right:0;
+	.c(@white);
+	.br(2rem/@fontSize);
+	.fz(17rem/@fontSize);
+	z-index:99;
+	&::before{
+		content: "";
+		.posa;
+		right: 15rem/@fontSize;
+		top: -4rem/@fontSize;
+		.squ(12rem/@fontSize);
+		.bc(@pop-bc);
+		.tranf(rotate(45deg));
+		.br(2rem/@fontSize);
+	}
+	li{
+		.p(0 40rem/@fontSize 0 30rem/@fontSize);
+		.lh(55rem/@fontSize);
+		white-space: nowrap;
+		cursor: pointer;
+		.userselect;
+		.posr;
+		//&:active{
+		//	.bc(@dark-click-bg)!important;
+		//}
+		&::after{
+			.posa;
+			bottom: 0;
+			left:30rem/@fontSize;
+			right: 0;
+			.h(1rem/@fontSize);
+			.bc(@gray6);
+			content: "";
+		}
+	}
+}
+
+// .el-pagination-box{
+// 	.tc;
+// 	.m(10rem/@fontSize auto 0);
+// 	.lh(30);
+// 	.el-pagination{
+// 		.dib;
+// 	}
+// 	.el-input{
+// 		.w(45);
+// 		.el-input__inner{
+// 			.h(30);
+// 			.lh(30);
+// 		}
+// 	}
+// 	.el-select{
+// 		// .h(25);
+// 		// .h(25);
+// 		.ml(10);
+// 		.el-input{
+// 			.w(100);
+// 		}
+// 		.el-icon-arrow-up{
+// 			.lh(30);
+// 		}
+// 	}
+// }
+// //默认按钮样式
+// .el-button{
+// 	&.el-button--text{
+// 		.c(@themes-bg-c);
+// 		.p(5rem/@fontSize 10rem/@fontSize);
+// 		&:not(.is-disabled){
+// 			&:hover{
+// 				opacity:.8;
+// 			}
+// 		}
+// 	}
+// 	&.el-button--default{
+// 		.p(0 50rem/@fontSize);
+// 		.bor(none);
+// 		.br(0);
+// 		.bc(@themes-bg-c);
+// 		.c(@white);
+// 		.lh(40);
+// 		&.is-disabled{
+// 			.bc(@gray-txt);
+// 			.c(@white);
+// 			opacity:.5;
+// 			&:hover,&:hover,&:focus{
+// 				.c(@grayC);
+// 				.bc(@gray-txt);
+// 			}
+// 		}
+// 		&:not(.is-disabled){
+// 			&:hover{
+// 				opacity:.8;
+// 				.bc(@themes-bg-c);
+// 				.c(@white);
+// 			}
+// 			&:active,&:focus,&:visited{
+// 				.bc(@themes-bg-c);
+// 				.c(@white);
+// 			}
+// 		}
+// 	}
+// }
+// .el-table{
+// 	&::before,&::after{
+// 		.bc(@white);
+// 	}
+// 	.el-table__header{
+// 		th{
+// 			.cell{
+// 				.fz(14);
+// 				.fw(normal);
+// 				.c(@gray6);
+// 			}
+// 		}
+// 	}
+// 	.el-table__body{
+// 		tr{
+// 			.fz(13);
+// 			cursor: pointer;
+// 			&:nth-child(odd){
+// 				.bc(@e-bg-color);
+// 			}
+// 			&:hover{
+// 				.bc(@hover-color);
+// 			}
+// 			&:hover{
+// 				td{
+// 					.bc(@hover-color);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+.child-view {
+  position: fixed;
+  width:100%;
+  bottom:0;
+  top:0;
+  padding-top: 1rem;
+  transition: all .2s cubic-bezier(.55,0,.1,1);
+}
+.turn-on-enter {
+  transform: translate3d(100%, 0, 0);
+}
+.turn-on-leave-to {
+  /* transform: translate3d(-20%, 0, 0); */
+}
+.turn-on-enter-active,
+.turn-on-leave-active {
+  transition: transform 0.4s ease;
+}
+.turn-off-enter {
+  /* transform: translate3d(-20%, 0, 0); */
+}
+.turn-off-leave-to {
+  transform: translate3d(100%, 0, 0);
+}
+.turn-off-enter-active,
+.turn-off-leave-active {
+  transition: transform 0.4s ease;
+}
+.turn-off-leave-active {
+  z-index: 2;
+}
+.app{
+	// .bc(@body-bg);
+	.c(@default-txt-c);
+	.fz(14rem/@fontSize);
+	&.dark{
+		.bc(@b-body-bg);
+		.c(@b-default-txt-c);
+		.el-loading-mask{
+			.bc(@b-body-bg);
+			opacity:.9;
+		}
+		//默认按钮样式
+		.el-button{
+			&.el-button--text{
+				.c(@themes-bg-c);
+				// .p(5rem/@fontSize 10rem/@fontSize);
+				&:not(.is-disabled){
+					&:hover{
+						opacity:.8;
+					}
+				}
+			}
+			&.el-button--default{
+				.p(0 40rem/@fontSize);
+				.bor(1rem/@fontSize solid @white);
+				.br(5rem/@fontSize);
+				.bc(@b-body-bg);
+				.c(@white);
+				.lh(35);
+				&.is-disabled{
+					.bc(@gray-txt);
+					&:hover,&:hover,&:focus{
+						.c(@grayC);
+						.bc(@gray-txt);
+					}
+				}
+				&:not(.is-disabled){
+					//&:hover{
+					//	opacity:.8;
+					//	.bc(@b-f-border-color);
+					//	.c(@white);
+					//}
+					//&:active,&:focus,&:visited{
+					//	.bc(@b-f-border-color);
+					//	.c(@white);
+					//}
+				}
+			}
+		}
+		.el-table{
+			.bc(@b-exchange-bg);
+			.bor(none);
+			&::before,&::after{
+				.bc(@b-exchange-bg);
+			}
+			.el-table__header{
+				th{
+					.bc(@b-exchange-bg);
+					.borbc(@b-exchange-bg);
+					.borrc(@b-exchange-bg);
+				}
+			}
+			tr{
+				.c(@b-default-txt-c);
+				.bc(@b-exchange-bg);
+				td{
+					.borbc(@b-exchange-bg);
+					.borrc(@b-exchange-bg);
+				}
+				&:hover{
+					td{
+						.bc(@b-f-border-color);
+					}
+				}
+			}
+		}
+	}
+}

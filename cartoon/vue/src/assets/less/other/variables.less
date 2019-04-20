@@ -1,0 +1,539 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+//## 页面全局用到的颜色
+@click-bg:             #e8e8e8;//点击背景颜色
+@click-txt:             #ee0e00;//点击文字颜色
+@token-flag-bg:         #ff537b;//售卖标志颜色
+@token-flag-bg2:         #196bbf;//售卖标志颜色
+@token-flag-bg3:        #ffa353;//售卖标志颜色
+@dark-click-bg:             #383838;//深色点击背景颜色
+@opacity:                        rgba(255,255,255,0);//透明色
+@pop-bc:                    #4c4c4c;//弹出窗背景颜色
+@cancel-btn:                #c2c2c2;
+@color-btn:                #ff8b04;
+@themes-bg-c:          #ff8b04; //默认主题颜色
+@my-b-c:                  #2a2a2f;//我的背景颜色
+@img-border-c:              #404048;//我的页面图片边框
+@right-txt-c:              #8e8e9f;//右边文字颜色
+@info-bor-c:              #828a98;//信息边框颜色
+@border-c:              #ebedf0;//边框颜色
+@info-bg-c:                 rgba(66, 66, 74, 0.5);//信息背景颜色
+@dot-c:                     #fa5151;//点的颜色
+@notic-bg-c:                   #fff4e0;//通知背景颜色
+@notic-txt-c:                   #e4b313;//通知文字颜色
+@time-bg:                       #242d3d;//时间背景颜色
+@trade-input-bc:                #fafafa;  //交易输入框背景
+@market-name-c:                #0085c9;  //市场名称颜色
+@a-c:                           #556392;  //链接颜色
+
+@themes-c:          #ff873f; //默认主题颜色
+@tools-b-c:              #e1e1e1;//工具条边框颜色
+@table-border-c:                 #ebeef5;//表格边框颜色
+@default-txt-c:              #404040;//默认文字颜色
+@default-txt2-c:              rgba(255,255,255,.8);//默认文字颜色
+@down-color:                     #ff3c8d;  //跌的颜色
+@up-color:                    #03de8d;//涨的颜色
+@normal-c:                      #828a98;//默认颜色
+@gray-txt:                      #a6a6a6;//灰色文字颜色
+@gray-icon:                      #b3b3b3;//灰色图标颜色
+@hover-color:                       #ffecde;//鼠标经过的颜色
+@f-txt-color:                         #959595;//页尾文字颜色
+@f-border-color:                        #4d4d4d;//页尾边框颜色
+@btn-dis-bg-c:                        #66462b;//按钮不可用背景
+@f-border-color1:                        #b0b0b0;//页尾边框颜色
+@e-txt-color:                        #cacaca;//exchange 颜色
+@e-d-color:                        #a0a0a0;//exchange 深度tab 颜色
+@e-bg-color:                        #f8f8f8;//exchange 背景颜色
+@e-txt-color1:                        #c3c3c3;//exchange 背景币种全称颜色
+@e-bg-buy:                        rgba(48, 176, 80,.1);//exchange 深度卖出背景颜色
+@e-bg-sell:                        rgba(255,81,121,.1);//exchange 深度买入背景颜色
+@e-depth-txt:                        rgba(51, 51, 51, .5);//exchange 深度文字颜色
+@bor-shadow-color:                      rgba(0,0,0,.1);//边框阴影
+@e-tip-txt:                        #d1d1d1;//exchange 背景币种全称颜色
+@e-btn-bor:                        #ececec;//exchange 按钮边框颜色
+@e-tab-txt:                        #a7a7a7;//exchange 币种信息tab文字颜色
+@e-tab-bor:                        #d5d5d5;//exchange 币种信息tab边框
+@e-info-txt:                        #8c8c8c;//exchange 币种信息文字内容颜色
+@trans:                             rgba(0,0,0,0);//透明色
+//download
+@d-bg-c:                            #202237;//ubi 下载页背景
+@d-bg-c1:                            #1e65b1;//ubi 下载页最下边背景
+
+//我的资产
+@a-t-c:                             #2f2f2f;//字体颜色
+@a-l-bg-c:                             #fef0e6;//下拉列表背景选中颜色
+@notic-bg:                              #fff8f3;//提示框背景颜色
+@foot-bor:                          #b2b2b2;//页脚边框颜色
+
+
+//** 灰阶
+@gray0:                 #000;
+@gray1:                 #111;
+@gray2:                 @gray1 * 2;     // #222
+@gray3:                 @gray1 * 3;     // #333
+@gray4:                 @gray1 * 4;     // #444
+@gray5:                 @gray1 * 5;     // #555
+@gray6:                 @gray1 * 6;     // #666
+@gray7:                 @gray1 * 7;     // #777
+@gray8:                 @gray1 * 8;     // #888
+@gray9:                 @gray1 * 9;     // #999
+@grayA:                 @gray1 * 10;    // #aaa
+@grayB:                 @gray1 * 11;    // #bbb
+@grayC:                 @gray1 * 12;    // #ccc
+@grayD:                 @gray1 * 13;    // #ddd
+@grayE:                 @gray1 * 14;    // #eee
+@grayF:                 #fff;
+@gray-highlight:        #f7f7f7;
+@gray-highlight2:       #f0f0f0;
+
+//** 灰阶
+
+// 背景色 body
+@body-bg:               #f0f3f5;
+// @body-bg:               #fff;
+
+// 全局文字颜色 body
+@text-color:            @gray6;
+@line-c:                 #dfdfdf; //线条颜色
+
+// 文字颜色
+@dark:                  @gray0;
+@gray-dark:             @gray3;
+@gray:                  @gray6;
+@gray-light:            @gray9;
+@gray-lighter:          @grayC;
+@white:                 @grayF;
+@green-dark:            #4bb1bd;
+@blue:                  #29a4e2;
+@blue-light:            #6cf;
+@blue-lighter:          #bef;
+@orange:                #ffc456;
+@red:                   red;
+
+@androidX:      15rem; //安卓刘海屏1
+@androidX_2:      20rem; //安卓刘海屏2
+@iphoneX:       22rem; //iPhone刘海屏
+@iphoneX_B:       34rem; //iPhone底部距离
+
+// 阴影
+
+@tran:         transparent;
+@tran2:        rgba(0, 0, 0, .0);
+@sd-gray1:     rgba(0, 0, 0, .1);
+@sd-gray2:     rgba(0, 0, 0, .2);
+@sd-gray3:     rgba(0, 0, 0, .3);
+@sd-gray4:     rgba(0, 0, 0, .4);
+@sd-gray5:     rgba(0, 0, 0, .5);
+@sd-gray6:     rgba(0, 0, 0, .6);
+@sd-gray7:     rgba(0, 0, 0, .7);
+@sd-gray8:     rgba(0, 0, 0, .8);
+@sd-gray9:     rgba(0, 0, 0, .9);
+@sd-light1:     rgba(255, 255, 255, .1);
+@sd-light2:     rgba(255, 255, 255, .2);
+@sd-light3:     rgba(255, 255, 255, .3);
+@sd-light4:     rgba(255, 255, 255, .4);
+@sd-light5:     rgba(255, 255, 255, .5);
+@sd-light6:     rgba(255, 255, 255, .6);
+@sd-light7:     rgba(255, 255, 255, .7);
+@sd-light8:     rgba(255, 255, 255, .8);
+@sd-light9:     rgba(255, 255, 255, .9);
+
+// 注册|登录
+@color-login:           @gray9;
+@gray-arrow:            @gray7;
+@gray-arrow-hover:      @gray0;
+@input-border-login:    @grayD;
+@color-icon:            @grayD;
+@login-text:            @gray6;
+
+//市商
+@m-title:               #fefe00;//市商标题颜色
+
+// 侧边栏颜色
+@side-color:            @grayF;
+@side-bg:               @gray0;
+@side-bg-hover:         @gray3;
+@side-mask:             rgba(0, 0, 0, .2);
+
+
+//** 按钮颜色
+// 按钮颜色-文字
+@btn-yellow:            #ffc360;
+@btn-red:               #f15f63;
+@btn-green:             #65d3d3;
+@btn-blue:              #6cf;
+
+// 详情页背景色
+@vi-bg:                 #fbfbfb;
+
+// 输入框
+@input-border:          @grayD;
+@input-border-focus:    rgba(0, 170, 255, .3);
+@input-error:           red;
+@input-error-shadow:    rgba(255, 0, 0, .2);
+@input-focus:           #00aaff;
+@input-focus-shadow:    rgba(0, 170, 255, .4);
+@input-sus:             green;
+
+// icon-color
+@facebook:              #587bb4;
+@twitter:               #75b5de;
+@google:                #f15f63;
+@wechat:                #64ab23;
+@qq:                    #1fb9e6;
+@sina:                  #d0422b;
+
+// keyword
+@key-close-color:       @sd-light8;
+
+// goods-details
+@details-bg:            #e9e9e9;
+
+//== Numerical
+
+//#################### 深色版颜色   ####################################################################################################
+
+
+//== Colors
+//
+// 背景色 body
+
+@b-body-bg:               #1f2237;
+@b-tool-bg:                 #282b43;//工具条默认颜色
+@b-tool-bor:                 #33364d;//工具条边框颜色
+@b-hover-c:                    #51567a;//鼠标放上去的颜色
+@b-exchange-bg:                 #23263d;//首页市场背景
+//## 页面全局用到的颜色
+@b-themes-c:          #ff873f; //默认主题颜色
+@b-themes-bg-c:          #ff6000; //默认主题颜色
+@b-tools-b-c:              #e1e1e1;//工具条边框颜色
+@b-default-txt-c:              rgba(255,255,255,.8);//默认文字颜色
+@b-down-color:                     #ff5179;  //跌的颜色
+@b-up-color:                    #30b051;//涨的颜色
+@b-d-line-c:                         #32374a; //边线颜色
+@b-down-color:                     #ff5179;  //跌的颜色
+@b-up-color:                    #30b051;//涨的颜色
+@b-gray-txt:                      #a6a6a6;//灰色文字颜色
+@b-gray-icon:                      #b3b3b3;//灰色图标颜色
+@b-hover-color:                       #ffecde;//鼠标经过的颜色
+@b-f-txt-color:                         #959595;//页尾文字颜色
+@b-f-border-color:                        #33364d;//页尾边框颜色
+@b-btn-dis-bg-c:                        #c2c2c2;//按钮不可用背景
+@b-f-border-color1:                        #b0b0b0;//页尾边框颜色
+@b-e-txt-color:                        #cacaca;//exchange 颜色
+@b-e-d-color:                        #a0a0a0;//exchange 深度tab 颜色
+@b-e-bg-color:                        #f8f8f8;//exchange 背景颜色
+@b-e-txt-color1:                        #c3c3c3;//exchange 背景币种全称颜色
+@b-e-bg-buy:                        rgba(48, 176, 80,.1);//exchange 深度卖出背景颜色
+@b-e-bg-sell:                        rgba(255,81,121,.1);//exchange 深度买入背景颜色
+@b-e-depth-txt:                        rgba(51, 51, 51, .5);//exchange 深度文字颜色
+@b-bor-shadow-color:                      rgba(0,0,0,.1);//边框阴影
+@b-e-tip-txt:                        #d1d1d1;//exchange 背景币种全称颜色
+@b-e-btn-bor:                        #ececec;//exchange 按钮边框颜色
+@b-e-tab-txt:                        #a7a7a7;//exchange 币种信息tab文字颜色
+@b-e-tab-bor:                        #d5d5d5;//exchange 币种信息tab边框
+@b-e-info-txt:                        #8c8c8c;//exchange 币种信息文字内容颜色
+@b-trans:                             rgba(0,0,0,0);//透明色
+//download
+@b-d-bg-c:                            #202237;//ubi 下载页背景
+@b-d-bg-c1:                            #1e65b1;//ubi 下载页最下边背景
+
+//我的资产
+@b-a-t-c:                             #2f2f2f;//字体颜色
+@b-a-l-bg-c:                             #fef0e6;//下拉列表背景选中颜色
+@b-notic-bg:                              #fff8f3;//提示框背景颜色
+
+// 全局文字颜色 body
+
+@b-line-c:                 #dfdfdf; //线条颜色
+
+
+//市商
+@b-m-title:               #fefe00;//市商标题颜色
+
+
+//** 按钮颜色
+// 按钮颜色-文字
+@b-btn-yellow:            #ffc360;
+@b-btn-red:               #f15f63;
+@b-btn-green:             #65d3d3;
+@b-btn-blue:              #6cf;
+
+
+
+
+
+///////////////////////////////////////////////////////////
+//
+// Variables
+// --------------------------------------------------
+
+//== Font
+@font:  'microsoft yehei',arial,sans-serif;
+
+//== Colors
+//
+//## 页面全局用到的颜色
+@themes-c:             #ff8b04; //默认主题颜色
+@themes-bg-c:          #ff8b04; //默认主题颜色
+@themes-bg-h-c:        #e97d04; //默认主题颜色
+@themes-depth-c:        #ff0f00; //默认主题颜色
+@themes-bg-i:          linear-gradient(to right, #ff0f00 0%, #ff8b04 100%); //默认主题渐变颜色
+@themes-bg-i-h:        linear-gradient(to right, #ee0e00 0%, #e87e04 100%); //默认主题渐变hover颜色
+@themes-bg-i-dark:     linear-gradient(to right, #ff8b04 0%, #ff8b04 100%); //默认主题渐变颜色
+@themes-bg-i-h-dark:   linear-gradient(to right, #ff8b04 0%, #e87e04 100%); //默认主题渐变hover颜色
+@b-index-kline-opacity:rgba(255,255,255,0.67); //首页k线透明背景
+@table-bg-i:           #f2f2f2;//linear-gradient(to right, #ffffff 0%,#f2f2f2 8%,#f2f2f2 92%, #ffffff 100%); //表格列表背景色
+@table-bg-hover-i:      #ffecde; //     linear-gradient(to right, #ffffff 0%,#ffecde 8%,#ffecde 92%, #ffffff 100%); //表格列表背景色
+@tools-b-c:              #dddddd;//工具条边框颜色
+@table-border-c:                 #ebeef5;//表格边框颜色
+@gray-txt-c:               #828a98;//灰色文字颜色
+@notic-hover:               @themes-c;//公告鼠标移上去颜色
+@default-txt-c:              #393a40;//默认文字颜色
+@foot-bg-c:                 #393a40;//底部背景颜色
+@default-txt2-c:              rgba(255,255,255,.8);//默认文字颜色
+@down-color:                  #ff3c8d;  //跌的颜色
+@up-color:                    #05ce86;//涨的颜色
+@zero-color:                  #364054;//百分之0的颜色
+@bg-disabled:                    #c2c2c2;//禁止按钮颜色
+@bg-disabled-dark:              #323338;//禁止按钮颜色
+@gray-txt:                      #a6a6a6;//灰色文字颜色
+@home-gray-txt:                      #737688;//首页市场文字颜色
+@gray-icon:                      #b3b3b3;//灰色图标颜色
+@hover-color:                       #ffecde;//鼠标经过的颜色
+@f-txt-color:                         #959595;//页尾文字颜色
+@f-border-color:                        #4d4d4d;//页尾边框颜色
+@btn-dis-bg-c:                        #9f9f9f;//按钮不可用背景
+@f-border-color1:                        #b0b0b0;//页尾边框颜色
+@e-txt-color:                       #989898;//exchange 颜色
+@e-d-color:                        #a0a0a0;//exchange 深度tab 颜色
+@e-bg-color:                        #f2f2f2;//exchange 背景颜色
+@e-txt-color1:                        #c3c3c3;//exchange 背景币种全称颜色
+@e-bg-buy:                        rgba(48, 176, 80,.1);//exchange 深度卖出背景颜色
+@e-bg-sell:                        rgba(255,81,121,.1);//exchange 深度买入背景颜色
+@e-depth-txt:                        rgba(51, 51, 51, .5);//exchange 深度文字颜色
+@bor-shadow-color:                      rgba(0,0,0,.1);//边框阴影
+@e-tip-txt:                        #d1d1d1;//exchange 背景币种全称颜色
+@e-btn-bor:                        #ececec;//exchange 按钮边框颜色
+@e-tab-txt:                        #a7a7a7;//exchange 币种信息tab文字颜色
+@e-tab-bor:                        #d5d5d5;//exchange 币种信息tab边框
+@e-info-txt:                        #8c8c8c;//exchange 币种信息文字内容颜色
+@trans:                             rgba(0,0,0,0);//透明色
+//download
+@d-bg-c:                            #202237;//ubi 下载页背景
+@d-bg-c1:                            #196abd;//ubi 下载页最下边背景
+
+//我的资产
+@a-t-c:                             #2f2f2f;//字体颜色
+@a-l-bg-c:                             #fef0e6;//下拉列表背景选中颜色
+@notic-bg:                              #fff8f3;//提示框背景颜色
+
+
+//** 灰阶
+@gray0:                 #000;
+@gray1:                 #111;
+@gray2:                 @gray1 * 2;     // #222
+@gray3:                 @gray1 * 3;     // #333
+@gray4:                 @gray1 * 4;     // #444
+@gray5:                 @gray1 * 5;     // #555
+@gray6:                 @gray1 * 6;     // #666
+@gray7:                 @gray1 * 7;     // #777
+@gray8:                 @gray1 * 8;     // #888
+@gray9:                 @gray1 * 9;     // #999
+@grayA:                 @gray1 * 10;    // #aaa
+@grayB:                 @gray1 * 11;    // #bbb
+@grayC:                 @gray1 * 12;    // #ccc
+@grayD:                 @gray1 * 13;    // #ddd
+@grayE:                 @gray1 * 14;    // #eee
+@grayF:                 #fff;
+@gray-highlight:        #f7f7f7;
+@gray-highlight2:       #f0f0f0;
+@gray-e8:       #e0e0e0;
+@gray-fa:       #fafafa;
+
+//** 灰阶
+
+// 背景色 body
+@body-bg:               #F2F2F2;
+// @body-bg:               #fff;
+
+// 全局文字颜色 body
+@text-color:            @gray6;
+@line-c:                 #dfdfdf; //线条颜色
+
+// 文字颜色
+@dark:                  @gray0;
+@gray-dark:             @gray3;
+@gray:                  @gray6;
+@gray-light:            @gray9;
+@gray-lighter:          @grayC;
+@white:                 @grayF;
+@green-dark:            #4bb1bd;
+@blue:                  #29a4e2;
+@blue-light:            #6cf;
+@blue-lighter:          #bef;
+@orange:                #ffc456;
+@red:                   #d83636;
+
+// 阴影
+
+@tran:         transparent;
+@tran2:        rgba(0, 0, 0, .0);
+@sd-gray1:     rgba(0, 0, 0, .1);
+@sd-gray2:     rgba(0, 0, 0, .2);
+@sd-gray3:     rgba(0, 0, 0, .3);
+@sd-gray4:     rgba(0, 0, 0, .4);
+@sd-gray5:     rgba(0, 0, 0, .5);
+@sd-gray6:     rgba(0, 0, 0, .6);
+@sd-gray7:     rgba(0, 0, 0, .7);
+@sd-gray8:     rgba(0, 0, 0, .8);
+@sd-gray9:     rgba(0, 0, 0, .9);
+@sd-light1:     rgba(255, 255, 255, .1);
+@sd-light2:     rgba(255, 255, 255, .2);
+@sd-light3:     rgba(255, 255, 255, .3);
+@sd-light4:     rgba(255, 255, 255, .4);
+@sd-light5:     rgba(255, 255, 255, .5);
+@sd-light6:     rgba(255, 255, 255, .6);
+@sd-light7:     rgba(255, 255, 255, .7);
+@sd-light8:     rgba(255, 255, 255, .8);
+@sd-light9:     rgba(255, 255, 255, .9);
+
+// 注册|登录
+@color-login:           @gray9;
+@gray-arrow:            @gray7;
+@gray-arrow-hover:      @gray0;
+@input-border-login:    @grayD;
+@color-icon:            @grayD;
+@login-text:            @gray6;
+
+//市商
+@m-title:               #fefe00;//市商标题颜色
+
+// 侧边栏颜色
+@side-color:            @grayF;
+@side-bg:               @gray0;
+@side-bg-hover:         @gray3;
+@side-mask:             rgba(0, 0, 0, .2);
+
+
+//** 按钮颜色
+// 按钮颜色-文字
+@btn-yellow:            #ffc360;
+@btn-red:               #f15f63;
+@btn-green:             #65d3d3;
+@btn-blue:              #6cf;
+
+// 详情页背景色
+@vi-bg:                 #fbfbfb;
+
+// 输入框
+@input-border:          @grayD;
+@input-border-focus:    rgba(0, 170, 255, .3);
+@input-error:           red;
+@input-error-shadow:    rgba(255, 0, 0, .2);
+@input-focus:           #00aaff;
+@input-focus-shadow:    rgba(0, 170, 255, .4);
+@input-sus:             green;
+
+// icon-color
+@facebook:              #587bb4;
+@twitter:               #75b5de;
+@google:                #f15f63;
+@wechat:                #64ab23;
+@qq:                    #1fb9e6;
+@sina:                  #d0422b;
+
+// keyword
+@key-close-color:       @sd-light6;
+
+// goods-details
+@details-bg:            #e9e9e9;
+
+//== Numerical
+//
+//## 页面全局用到的数值
+
+// 全局宽度
+@container:             100%;
+@e-container:           100%;
+@layout:                100%;
+@content:               100%;
+@content:               100%;
+
+//全局背景色
+@global-bgcolor:#ededed;
+
+
+
+//#################### 深色版颜色   ####################################################################################################
+
+
+//== Colors
+//
+// 背景色 body
+@b-body-bg:                 #0f1118;//#131313; //背景颜色
+@b-tool-bg:                 #20222c;//#191c1f; //工具条默认颜色
+@b-tool-bor:                #24292d; //工具条边框颜色
+@b-hover-c:                 rgb(42, 46, 62); //鼠标放上去的颜色
+@b-exchange-bg:             @b-tool-bg;//#191c1f; //首页市场背景
+@b-index-kline-opacity-dark:rgba(32,34,44,0.67); //首页k线透明背景
+@b-exchange-header-dark:    #1a1d25;//TAB背景
+//## 页面全局用到的颜色
+@b-themes-c:          #ff873f; //默认主题颜色
+@b-themes-bg-c:          #ff873f; //默认主题颜色
+@b-themes-bg2-c:          #1f242d; //默认主题颜色
+@b-tools-b-c:              #e1e1e1;//工具条边框颜色
+@b-default-txt-c:              rgba(255,255,255,.8);//默认文字颜色
+@b-d-line-c:                         #32374a; //边线颜色
+@b-down-color:                    #ff3c8d;  //跌的颜色
+@b-up-color:                      #05ce86;//涨的颜色
+@b-gray-txt:                      #a6a6a6;//灰色文字颜色
+@b-gray-icon:                      #b3b3b3;//灰色图标颜色
+@b-hover-color:                       #ffecde;//鼠标经过的颜色
+@b-f-txt-color:                         #959595;//页尾文字颜色
+@b-f-border-color:                        #24292d;//页尾边框颜色
+@b-btn-dis-bg-c:                        #9f9f9f;//按钮不可用背景
+@b-f-border-color1:                        #b0b0b0;//页尾边框颜色
+@b-e-txt-color:                        #cacaca;//exchange 颜色
+@b-e-d-color:                        #a0a0a0;//exchange 深度tab 颜色
+@b-e-bg-color:                        #f2f2f2;//exchange 背景颜色
+@b-e-txt-color1:                        #c3c3c3;//exchange 背景币种全称颜色
+@b-e-bg-buy:                        rgba(48, 176, 80,.1);//exchange 深度卖出背景颜色
+@b-e-bg-sell:                        rgba(255,81,121,.1);//exchange 深度买入背景颜色
+@b-e-depth-txt:                        rgba(51, 51, 51, .5);//exchange 深度文字颜色
+@b-bor-shadow-color:                      rgba(0,0,0,.1);//边框阴影
+@b-e-tip-txt:                        #d1d1d1;//exchange 背景币种全称颜色
+@b-e-btn-bor:                        #ececec;//exchange 按钮边框颜色
+@b-e-tab-txt:                        #a7a7a7;//exchange 币种信息tab文字颜色
+@b-e-tab-bor:                        #d5d5d5;//exchange 币种信息tab边框
+@b-e-info-txt:                        #8c8c8c;//exchange 币种信息文字内容颜色
+@b-trans:                             rgba(0,0,0,0);//透明色
+//download
+@b-d-bg-c:                            #202237;//ubi 下载页背景
+@b-d-bg-c1:                            #1e65b1;//ubi 下载页最下边背景
+
+//我的资产
+@b-a-t-c:                             #2f2f2f;//字体颜色
+@b-a-l-bg-c:                             #fef0e6;//下拉列表背景选中颜色
+@b-notic-bg:                              #fff8f3;//提示框背景颜色
+
+// 全局文字颜色 body
+
+@b-line-c:                 #dfdfdf; //线条颜色
+
+
+//市商
+@b-m-title:               #fefe00;//市商标题颜色
+
+
+//** 按钮颜色
+// 按钮颜色-文字
+@b-btn-yellow:            #ffc360;
+@b-btn-red:               #f15f63;
+@b-btn-green:             #65d3d3;
+@b-btn-blue:              #6cf;

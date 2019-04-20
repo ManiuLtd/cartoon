@@ -1,0 +1,87 @@
+// 引入全局方法
+@import "../../common.less";
+.fq-language-component{
+    // .lang{
+        .posa;
+        right:15px;
+        top:15px;
+        .fz(14);
+        // .pos-static;
+        // .m(0);
+        // .display-inline-block;
+        .la-list{
+            .db(none);
+            .bor(1px solid @f-border-color1);
+            .posa;
+            top:27px;
+            left:0;
+            z-index:2;
+            .w(100%);
+            .bs;
+            text-indent:1em;
+            li{
+                .h(30);
+                .lh(30);
+                .mb(0);
+                .c(@f-txt-color);
+                .bp(5px center);
+                background-repeat: no-repeat;
+                background-size: 19px 12px;
+                text-indent: 30px;
+                .fz(12);
+                .bc(@white);
+                .db;
+                &:hover{
+                    .bc(@white);
+                    .c(@themes-c);
+                }
+            }
+        }
+        &:hover{
+            cursor: pointer;
+            .la-list{
+                .db;
+            }
+        }
+        .la-title{
+            .lh(30);
+            text-indent: 30px;
+            background-repeat: no-repeat;
+            .bz(23px 14px);
+            .c(@white);
+            .bp(5px center);
+
+            .fz(12);
+            width: auto;
+            .pr(20);
+            .m(0);
+            .bor(1px solid #dcdfe6);
+            .h(26);
+            .lh(24);
+            .bz(19px 12px);
+            .tl;
+            .bc(@white);
+            .c(@gray6);
+            i{
+                text-indent:5px;
+            }
+        }
+
+}
+.dark{
+    .fq-language-component {
+        .la-list {
+            .bor(1px solid @b-d-line-c);
+
+            li {
+                .c(@sd-light6);
+                .bc(@b-tool-bg);
+
+                &:hover {
+                    .bc(@b-hover-c);
+                    .c(@themes-c);
+                }
+            }
+        }
+    }
+}

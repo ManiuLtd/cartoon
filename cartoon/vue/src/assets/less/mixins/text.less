@@ -1,0 +1,58 @@
+// Text
+
+.row-one (@row-height) {
+	height: @row-height * 1px;
+	line-height: @row-height * 1px;
+	overflow: hidden;
+}
+
+.row-more (@row-height, @row-number) {
+	height: (@row-height * 1px) * @row-number;
+	line-height: @row-height * 1px;
+	overflow: hidden;
+}
+
+.text-s (@Param) {
+	text-shadow: @Param;
+}
+
+.text-c () {
+	text-align: center;
+}
+
+.text-l () {
+	text-align: left;
+}
+
+.text-r () {
+	text-align: right;
+}
+
+.ellipsis () {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.text-i(@size:1em){
+	text-indent: @size;
+}
+// Simple
+
+.lh (@height) {
+	line-height: @height * 1px;
+}
+.th (@row-height) {
+	.row-one (@row-height);
+}
+.tc () {
+	.text-c;
+}
+.tl () {
+	.text-l;
+}
+.tr () {
+	.text-r;
+}
+.ts (@Param) {
+	.text-s(@Param);
+}

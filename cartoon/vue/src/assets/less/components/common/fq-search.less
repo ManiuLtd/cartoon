@@ -1,0 +1,78 @@
+// 引入全局方法
+@import "../../common.less";
+.el-select-dropdown{
+    &.el-select-fq-search{
+        .w(615)!important;
+        min-width:615px!important;
+        .left{
+            .fl;
+        }
+        .right{
+            .fr;
+        }
+    }
+}
+.fq-index-search-component{
+    .w(@container);
+    .h(100);
+    // .lh(100);
+    .m(0 auto);
+    .oh;
+    .logo{
+        .wh(84;60);
+        .bg('/static/images/logo.png';center no-repeat);
+        .bz(contain);
+        .mt(13);
+        .fl;
+    }
+    .logo-txt{
+        .fz(24);
+        .mt(48);
+        .ml(10);
+        .fl;
+    }
+    .el-select{
+        .fl;
+        .wh(615;40);
+        .mt(35);
+        .ml(118);
+        .el-input__inner{
+            .bor(1px solid @themes-c);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            .borr(0);
+        }
+        .el-input__suffix{
+            .db(none);
+        }
+    }
+    .el-button{
+        .mt(35);
+        .bc(@themes-bg-c);
+        .c(@white);
+        .bor(1px solid @themes-bg-c);
+        cursor: pointer;
+        .fw(normal);
+        .h(40);
+        .p(0);
+        .w(72);
+        .tc;
+    }
+    .qrcode{
+        .fr;
+        .pt(66);
+        // .w(68);
+        .fz(12);
+        .mt(11);
+        .bg('/static/images/qrcode.png';center top no-repeat);
+    }
+}
+.dark{
+    .fq-index-search-component{
+        .el-input{
+            .el-input__inner{
+                .bc(@b-tool-bg);
+            }
+        }
+    }
+}

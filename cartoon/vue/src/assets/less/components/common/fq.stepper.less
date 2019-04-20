@@ -1,0 +1,68 @@
+@import "../../common.less";
+.fq-stepper-component{
+    .df;
+    .m(5rem/@fontSize auto);
+    .fq-stepper-minus{
+        .w(38rem/@fontSize);
+        .h(30rem/@fontSize);
+        .bor(1rem/@fontSize solid @border-c);
+        .borr(none);
+        .posr;
+        &::before{
+            content:'';
+            .posa;
+            .wh(9rem/@fontSize;1rem/@fontSize);
+            .bc(#7d7e80);
+            .tranf(translate(-50%,-50%));
+            left:50%;
+            top:50%;
+        }
+        &:disabled{
+            .bc(@e-bg-color);
+            &::before{
+                .bc(@e-bg-color);
+            }
+        }
+    }
+    .fq-stepper-input{
+        .flex(1);
+        .w(33rem/@fontSize);
+        .fz(13rem/@fontSize);
+        .tc;
+        .bor(1rem/@fontSize solid @border-c);
+        .h(30rem/@fontSize);
+        .lh(30rem/@fontSize);
+    }
+    .fq-stepper-plus{
+        .w(38rem/@fontSize);
+        .h(30rem/@fontSize);
+        .bor(1rem/@fontSize solid @border-c);
+        .borl(none);
+        .posr;
+        .c(@dark);
+        &::before{
+            content:'';
+            .posa;
+            .wh(9rem/@fontSize;1rem/@fontSize);
+            .bc(#7d7e80);
+            .tranf(translate(-50%,-50%));
+            left:50%;
+            top:50%;
+        }
+        &::after{
+            content:'';
+            .posa;
+            .wh(9rem/@fontSize;1rem/@fontSize);
+            .bc(#7d7e80);
+            .tranf(translate(-50%,-50%) rotate(90deg));
+            left:50%;
+            top:50%;
+        }
+        &:disabled{
+            .bc(@e-bg-color);
+            &::before,&::after{
+                .bc(@e-bg-color);
+            }
+        }
+    }
+}

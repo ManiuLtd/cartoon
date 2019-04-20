@@ -1,0 +1,54 @@
+// Border
+
+.bor(@Param: 0) {
+	border: @Param;
+}
+
+.bor-top(@Param: 0) {
+	border-top: @Param;
+}
+
+.bor-right(@Param: 0) {
+	border-right: @Param;
+}
+
+.bor-bottom(@Param: 0) {
+	border-bottom: @Param;
+}
+
+.bor-left(@Param: 0) {
+	border-left: @Param;
+}
+
+// Simple
+
+.bort(@Param: 0) {
+	.bor-top(@Param);
+}
+
+.borr(@Param: 0) {
+	.bor-right(@Param);
+}
+
+.borb(@Param: 0) {
+	.bor-bottom(@Param);
+}
+
+.borl(@Param: 0) {
+	.bor-left(@Param);
+}
+.borc(@Param:@dark){
+	border-color: @Param;
+}
+.borlc(@Param:@dark){
+	border-left-color: @Param;
+}
+.bortc(@Param:@dark){
+	border-top-color: @Param;
+}
+.borrc(@Param:@dark){
+	border-right-color: @Param;
+}
+.borbc(@Param:@dark){
+	border-bottom-color: @Param;
+}

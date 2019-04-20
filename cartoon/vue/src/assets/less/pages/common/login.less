@@ -1,0 +1,237 @@
+// 引入全局方法
+@import "../../common.less";
+.fq-login-page{
+    .pt(20rem/@fontSize);
+    .van-nav-bar{
+        .borb(0);
+        .bc(@opacity);
+        .van-nav-bar__left{
+            .fz(18rem/@fontSize);
+            .van-icon.van-icon-arrow-left{
+                .h(44rem/@fontSize);
+                .c(@themes-bg-c);
+                line-height: 44rem/@fontSize;
+                .pr(10rem/@fontSize);
+                .fz(14rem/@fontSize);
+                .posr;
+                .pl(24rem/@fontSize);
+                &:before{
+                    .posa;
+                    left: 0;
+                    top:50%;
+                    line-height: 24rem/@fontSize;
+                    .fz(28rem/@fontSize);
+                    .mt(-10rem/@fontSize);
+                }
+                &.touch-event-active{
+                    .bc(#f2f2f2);
+                }
+            }
+        }
+        .van-nav-bar__right{
+            .fq-reg-btn{
+                .p(0 14rem/@fontSize);
+                &.touch-event-active{
+                    .bc(#f2f2f2);
+                }
+            }
+        }
+    }
+    .login-box{
+        .pt(44rem/@fontSize);
+        .h(100%);
+        .posr;
+        .title{
+            .c(@default-txt-c);
+            .fz(28rem/@fontSize);
+            .m(0 auto);
+            .tc;
+            .sub{
+                .fz(14rem/@fontSize);
+                .fw(normal);
+            }
+        }
+        .err-msg,.pass-msg{
+            .mt(4rem/@fontSize);
+            .lh(12rem/@fontSize);
+            .h(12rem/@fontSize);
+            .fz(12rem/@fontSize);
+            .fl;
+        }
+        .err-msg{
+            .c(@red);
+        }
+        .pass-msg{
+            .c(@input-sus);
+        }
+        .form-box{
+            .m(10rem/@fontSize auto 0 auto);
+            .w(90%);
+            .pb(44rem/@fontSize);
+            .label{
+                clear: both;
+                .fz(14rem/@fontSize);
+                .c(@default-txt-c);
+                .lh(30rem/@fontSize);
+                // .db(none);
+            }
+            .van-cell-group{
+                background: none;
+                &:after{
+                    display: none;
+                }
+                .van-cell.van-field{
+                    .p(0);
+                    .h(50rem/@fontSize);
+                    .borb(0.75rem/@fontSize solid @grayC);
+                    .van-field__left-icon{
+                        .mr(14rem/@fontSize);
+                        .van-icon{
+                            .mt(13rem/@fontSize);
+                            &.fa-email{
+                            }
+                        }
+                    }
+                    .van-cell__value.van-cell__value--alone{
+                        .h(100%);
+                        .van-field__body{
+                            .h(100%);
+                            .van-field__control{
+                                .h(100%);
+                                .w(100%);
+                                .fz(16rem/@fontSize);
+                            }
+                        }
+                    }
+                }
+            }
+            .fq-no-captcha-component{
+                .m(20rem/@fontSize auto 10rem/@fontSize auto);
+                &.nc-container{
+                    .nc_wrapper{
+                        .w(100%)!important;
+                        .nc_scale{
+                            .h(44rem/@fontSize);
+                            span{
+                                .h(42rem/@fontSize);
+                                line-height: 42rem/@fontSize;
+                                &.nc-lang-cnt{
+                                    .h(44rem/@fontSize);
+                                    line-height: 44rem/@fontSize;
+                                }
+                            }
+                            .nc_ok,.nc_bg{
+                                background: @up-color;
+                            }
+                            .btn_ok{
+                                background: @up-color;
+                                .borc(@up-color);
+                                .c(@white);
+                            }
+                        }
+                    }
+                    .errloading{
+                        .w(100%);
+                        .p(0);
+                        .h(44rem/@fontSize);
+                        line-height:44rem/@fontSize;
+                        a{
+                            .m(0 4rem/@fontSize);
+                        }
+                    }
+                }
+            }
+            .login-btn{
+                .mt(10rem/@fontSize);
+                .fz(18rem/@fontSize);
+                .w(100%);
+                .fw(normal);
+                .bor(none);
+                .br(0);
+                .mb(10rem/@fontSize);
+            }
+            .service{
+                .c(@themes-bg-c);
+                cursor: pointer;
+            }
+            .msg{
+                .mb(5rem/@fontSize);
+            }
+            .read-box{
+                .mt(10rem/@fontSize);
+            }
+            .fa{
+                .fz(14rem/@fontSize);
+                .c(@default-txt-c);
+                opacity:.7;
+                // &.icon-youxiang-shi{}
+                &.fa-password{
+                    .fz(17rem/@fontSize);
+                }
+            }
+        }
+        .login-other{
+            .posa;
+            bottom: 0;
+            .w(100%);
+            left:0;
+            .login-other-line{}
+            .tc;
+            .login-other-ol{
+                .fz(0);
+                .p(20rem/@fontSize 0);
+                li{
+                    .fz(14rem/@fontSize);
+                    .display-inline-block;
+                    .m(0 5rem/@fontSize);
+                    a{
+                        .c(@default-txt-c);
+                        .display-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.app.iphoneX{
+    .fq-login-page{
+        .pt((20rem+@iphoneX)/@fontSize);
+        .pb((0rem+@iphoneX_B)/@fontSize);
+    }
+}
+.app.androidX{
+    .fq-login-page{
+        .pt((20rem+@androidX)/@fontSize);
+        .pb((0rem+0)/@fontSize);
+    }
+}
+
+.dark{
+    .fq-login-page{
+        .login-box{
+            .bc(@b-exchange-bg);
+            .title{
+                .c(@white);
+            }
+            .form-box{
+                .fa{
+                    .c(@white);
+                }
+                // .el-input{
+                //     .el-input__inner{
+                //         .bor(none);
+                //         .c(@white);
+                //         .bc(@b-tool-bg);
+                //     }
+                // }
+                // .el-checkbox{
+                //     .c(@white);
+                //     .el-checkbox__inner{
+                //         .bc(@b-tool-bg);
+                //     }
+                // }
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+// transform
+@tranX: translateX;
+@tranY: translateY;
+
+.transform(@Param) {
+	-webkit-transform: @Param;
+			transform: @Param;
+}
+
+.userselect(@param:none){
+	// user-select：none | text(默认) | all | element
+	-webkit-user-select: @param;
+	-o-user-select: @param;
+	-ms-user-select: @param;
+	-moz-user-select: @param;
+	user-select: @param;
+}
+
+.tranf(@Param) {
+	.transform(@Param);
+}
+.tranO(@Param: center) {
+	transform-origin: @Param;
+}
+.trans(@tX: 0, @tY: 0, @tZ: 0, @scale: 1, @rotate: 0deg) {
+	.transform(translate3d(@tX * 1px, @tY * 1px, @tZ * 1px) scale(@scale) rotate(@rotate));
+	-webkit-transform-style: preserve-3d;
+}
+.tranX(@Param) {
+	.transform(translateX(@Param * 1px));
+}
+.tranY(@Param) {
+	.transform(translateY(@Param * 1px));
+}
+.scale(@Param) {
+	.transform(scale(@Param));
+}
+.scaleX(@Param) {
+	.transform(scaleX(@Param));
+}
+.scaleY(@Param) {
+	.transform(scaleY(@Param));
+}
+.skewX(@Param) {
+	.transform(skewX(@Param * 1deg));
+}
+.skewY(@Param) {
+	.transform(skewY(@Param * 1deg));
+}
+.rotate(@Param) {
+	.transform(rotate(@Param * 1deg));
+}
+.rotateX(@Param) {
+	.transform(rotateX(@Param * 1deg));
+}
+.rotateY(@Param) {
+	.transform(rotateY(@Param * 1deg));
+}

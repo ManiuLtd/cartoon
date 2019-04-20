@@ -1,0 +1,75 @@
+.px2px(@name, @px){
+    @{name}: round(@px / 2) * 1px;     
+    [data-dpr="2"] & {     
+     	@{name}: @px * 1px;     
+    }      
+    [data-dpr="2.5"] & {     
+     	@{name}: round(@px * 2.5 / 2) * 1px;    
+    }
+    [data-dpr="2.75"] & {     
+    	@{name}: round(@px * 2.75 / 2) * 1px;     
+   	}     
+   	[data-dpr="3"] & {     
+   		@{name}: round(@px / 2 * 3) * 1px     
+   	}
+   	[data-dpr="4"] & {     
+   		@{name}: @px * 2px;     
+   	}     
+} 
+
+
+
+.f36{
+	font-size: 36px;	
+}
+[data-dpr="1"] .f36{
+	font-size: 18px;
+}
+[data-dpr="3"] .f36{
+	font-size: 54px;
+}
+.f40{
+	font-size: 40px;	
+}
+[data-dpr="1"] .f40{
+	font-size: 20px;
+}
+[data-dpr="3"] .f40{
+	font-size: 60px;
+}
+.f32{
+	font-size: 32px;	
+}
+[data-dpr="1"] .f32{
+	font-size: 16px;
+}
+[data-dpr="3"] .f32{
+	font-size: 48px;
+}
+.f30{
+	font-size: 30px;	
+}
+[data-dpr="1"] .f30{
+	font-size: 15px;
+}
+[data-dpr="3"] .f30{
+	font-size: 45px;
+}
+.f28{
+	font-size: 28px;	
+}
+[data-dpr="1"] .f28{
+	font-size: 14px;
+}
+[data-dpr="3"] .f28{
+	font-size: 42px;
+}
+.f24{
+	font-size: 24px;	
+}
+[data-dpr="1"] .f24{
+	font-size: 12px;
+}
+[data-dpr="3"] .f24{
+	font-size: 36px;
+}

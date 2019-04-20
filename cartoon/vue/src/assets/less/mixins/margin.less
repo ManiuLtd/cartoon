@@ -1,0 +1,43 @@
+// Margin
+
+.m(@Param: 0) {
+	margin: @Param;
+}
+
+.m-top(@Param: 0) {
+	margin-top: @Param * 1px;
+}
+
+.m-right(@Param: 0) {
+	margin-right: @Param * 1px;
+}
+
+.m-bottom(@Param: 0) {
+	margin-bottom: @Param * 1px;
+}
+
+.m-left(@Param: 0) {
+	margin-left: @Param * 1px;
+}
+
+// Simple
+
+.m(@Param: 0) {
+	margin: @Param;
+}
+
+.mt(@Param: 0) {
+	.m-top(@Param);
+}
+
+.mr(@Param: 0) {
+	.m-right(@Param);
+}
+
+.mb(@Param: 0) {
+	.m-bottom(@Param);
+}
+
+.ml(@Param: 0) {
+	.m-left(@Param);
+}

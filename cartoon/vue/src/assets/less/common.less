@@ -1,0 +1,68 @@
+// 导入全局变量
+@import "other/variables.less";
+
+// 导入混合宏
+@import "mixins/mixins.less";
+@fontSize:20px;
+
+.nav-bar(){
+	.van-nav-bar {
+        .pt(20rem/@fontSize);
+        .bc(@white);
+        .posa;
+        // z-index:99999!important;
+        top:0;
+        .w(100%);
+        .borb(1rem/@fontSize solid @grayE);
+        .fa--pulldownarrow{
+            .c(@themes-bg-c);
+            .fz(20rem/@fontSize);
+        }
+        .van-nav-bar__title{
+            // .c(@white);
+            // .fz(20);
+            .fz(20rem/@fontSize);
+            .fw(700);
+        }
+        .van-icon-arrow-left{
+            .fz(22rem/@fontSize);
+            // .c(@normal-c);
+        }
+        .van-icon{
+            .c(@gray3);
+            .squ(44rem/@fontSize);
+            .lh(44rem/@fontSize);
+        }
+        .van-icon-star{
+            .c(@themes-bg-c);
+        }
+        .van-nav-bar__right{
+            .van-nav-bar__text{
+                .c(@gray5);
+            }
+            .van-icon{
+                .fz(22rem/@fontSize);
+            }
+        }
+        .icon-market{
+            .squ(24rem/@fontSize);
+            .bp(-159rem/@fontSize -227rem/@fontSize);
+        }
+        &::after{
+            .db(none);
+        }
+    }
+}
+
+.nav-bar() {
+    .app.iphoneX{
+        .van-nav-bar {
+            .pt((20rem+@iphoneX)/@fontSize);
+        }
+    }
+    .app.androidX{
+      .van-nav-bar {
+        .pt((20rem+@androidX)/@fontSize);
+      }
+    }
+}

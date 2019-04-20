@@ -1,0 +1,53 @@
+// 引入全局方法
+@import "../../common.less";
+.fq-exchange-header-nav-component{
+    .h(60);
+    // .lh(60);
+    // .bc(@white);
+    .nav-box{
+        .m(0 auto);
+        .w(@e-container);
+        .oh;
+        .posr;
+    }
+    .logo{
+        .wh(65;50);
+        .bg('/static/images/logo.png';center no-repeat);
+        .bz(contain);
+        .mt(3);
+        .fl;             
+    }
+    .logo-txt{
+        .fz(24);
+        .mt(23);
+        .ml(10);
+        .fl;
+    }
+    .el-icon-menu{
+        .posa;
+        right:0;
+        top:20px;
+        .fz(25);
+        .c(@themes-c);
+    }
+    .left{
+        // .fl;
+        .lh(60);
+        .fz(16);
+        // .mt(5);
+        .tc;
+        li{
+            .dib;
+            cursor: pointer;
+            .mr(30);
+            .p(0 10px);
+            .h(25);
+            .lh(25);
+            .c(@themes-c);
+            &:hover,&.active{
+                .c(@white);
+                .bc(@themes-bg-c);
+            }
+        }
+    }
+}

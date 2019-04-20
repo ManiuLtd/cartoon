@@ -1,0 +1,57 @@
+// Layout
+// 引入全局方法
+@import "../minxins/minxins.less";
+[data-ctr-name=scrollview] {
+	width: 100%;
+	.oh;
+	.df;
+}
+[data-ctr-name=scrollview][data-dir=vertical] {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	flex-direction: column
+}
+[data-ctr-name=scrollview][data-dir=horizontal] {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	flex-direction: row
+}
+[data-ctr-name=scrollview] .scroll-wrap {
+	.db;
+	.flex;
+	//overflow-x: hidden;
+	//overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	.posr;
+}
+[data-ctr-name=scrollview][data-dir=vertical] .scroll-wrap,
+[data-ctr-name=scrollview][data-dir=vertical] .scroll-content {
+	.w(100%);
+	height: auto;
+}
+[data-ctr-name=scrollview] .scroll-content {
+	.posa;
+}
+
+
+// position
+.fixed-top,
+.fixed-bottom {
+	left: 0px;
+	right: 0px;
+	.w(100%);
+	.db;
+	header {
+		.bc(@white);
+	}
+}
+.fixed-top {
+	top: 0px;
+	background-color: #fff;
+	box-shadow: 0px 0px 10px 0px #ddd;
+}
+.fixed-bottom {
+	bottom: 0px;
+}

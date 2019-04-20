@@ -1,0 +1,62 @@
+// Button
+// 引入全局方法
+@import "../minxins/minxins.less";
+.btn-box {
+	.tc;
+}
+
+// Ripple
+.e-ripple {
+	.posr;
+	s {
+		.posa;
+		z-index: 1;
+		.squ(160);
+		.db;
+		.tranO(center);
+		opacity: 0;
+		.trans(-50%, -50%, 0, 1);
+		.br;
+		pointer-events: none;
+		.bc(@sd-light5);
+		.keyframes(btn-scale; {
+			0%   {
+				opacity: 1;
+				.trans(-50%, -50%, 0, 0);
+			}
+			100% {
+				opacity: 0;
+				.trans(-50%, -50%, 0, 1);
+			}
+		});
+		.anime(btn-scale .6s ease);
+	}
+}
+.ripple-blue {
+	s {
+		.bc(@blue-light);
+	}
+}
+.e-btn {
+	.posr;
+	.wh(180, 40);
+	display: inline-block;
+	.lh(40);
+	.tc;
+	cursor: pointer;
+	.bs;
+	.fz(14);
+	.br(4px);
+	.tran;
+	.oh;
+}
+.btn-disabled {
+	cursor: default;
+}
+.btn-blue {
+	.bc(@blue-light);
+	color: @white;
+	&:hover {
+		.bc(@blue);
+	}
+}

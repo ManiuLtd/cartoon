@@ -1,0 +1,24 @@
+// Font
+
+.yahei() {
+	font-family: 'Microsoft YaHei';
+}
+
+.font-s (@Size: 12px) {
+	font-size: @Size * 1px;
+}
+.font-w (@Size: 100) {
+	font-weight: @Size;
+}
+
+// Simple
+
+.fz (@Size) {
+	.font-s(@Size);
+}
+.fw (@Size: 100) {
+	.font-w(@Size);
+}
+.c(@color:#fff){
+	color:@color;
+}

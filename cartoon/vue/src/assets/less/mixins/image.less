@@ -1,0 +1,48 @@
+// Image Mixins
+// - Retina image
+
+.retina-base(@file-1x; @file-2x;) {
+	background-image: url("@{file-1x}");
+	background-image: -webkit-image-set(url("@{file-1x}") 1x, url("@{file-2x}") 2x);
+}
+
+.img-retina(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: no-repeat;
+}
+
+.img-retina-background(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: repeat;
+}
+
+.img-retina-background-x(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: repeat-x;
+}
+
+.img-retina-background-y(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: repeat-y;
+}
+
+// Simple
+
+.imgr(@file-1x; @file-2x;) {
+	.img-retina(@file-1x; @file-2x;)
+}
+
+.imgr-r(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: repeat;
+}
+
+.imgr-x(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: repeat-x;
+}
+
+.imgr-y(@file-1x; @file-2x;) {
+	.retina-base(@file-1x; @file-2x;);
+	background-repeat: repeat-y;
+}

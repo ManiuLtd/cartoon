@@ -1,0 +1,39 @@
+// Padding
+
+.p(@Param: 0) {
+	padding: @Param;
+}
+
+.p-top(@Param: 0) {
+	padding-top: @Param * 1px;
+}
+
+.p-right(@Param: 0) {
+	padding-right: @Param * 1px;
+}
+
+.p-bottom(@Param: 0) {
+	padding-bottom: @Param * 1px;
+}
+
+.p-left(@Param: 0) {
+	padding-left: @Param * 1px;
+}
+
+// Simple
+
+.pt(@Param: 0) {
+	.p-top(@Param);
+}
+
+.pr(@Param: 0) {
+	.p-right(@Param);
+}
+
+.pb(@Param: 0) {
+	.p-bottom(@Param);
+}
+
+.pl(@Param: 0) {
+	.p-left(@Param);
+}

@@ -1,0 +1,33 @@
+// gradient
+
+.gradient(@direction; @color) {
+	background-image: -webkit-linear-gradient(@direction, @color);
+	background-image:         linear-gradient(@direction, @color);
+}
+.gradient-text(@direction; @color) {
+	-webkit-mask-image: -webkit-linear-gradient(@direction, @color);
+}
+.g-top(@color: ~"@{tran} 0%, @{tran} 100%")    {
+	.gradient(to top; @color);
+}
+.g-right(@color: ~"@{tran} 0%, @{tran} 100%")  {
+	.gradient(to right; @color);
+}
+.g-bottom(@color: ~"@{tran} 0%, @{tran} 100%") {
+	.gradient(to bottom; @color);
+}
+.g-left(@color: ~"@{tran} 0%, @{tran} 100%")   {
+	.gradient(to left; @color);
+}
+.gt-top(@color: ~"@{tran} 0%, @{tran} 100%")    {
+	.gradient-text(to top; @color);
+}
+.gt-right(@color: ~"@{tran} 0%, @{tran} 100%")  {
+	.gradient-text(to right; @color);
+}
+.gt-bottom(@color: ~"@{tran} 0%, @{tran} 100%") {
+	.gradient-text(to bottom; @color);
+}
+.gt-left(@color: ~"@{tran} 0%, @{tran} 100%")   {
+	.gradient-text(to left; @color);
+}

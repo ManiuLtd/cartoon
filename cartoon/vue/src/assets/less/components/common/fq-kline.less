@@ -1,0 +1,1184 @@
+// 引入全局方法
+@import "../../common.less";
+// html,
+// body {
+// }
+.fq-kline-component{
+    min-height: 100%;
+    // margin: 0;
+    .m(0);
+    min-width: 100%;
+    .posr;
+    .chart_container {
+        cursor: default;
+        // font-family: arial, sans, serif;
+        // font-size: 12rem/@fontSize;
+        .fz(12rem/@fontSize);
+        // height: 100%;
+        .h(100%);
+        // position: relative;
+        .posr;
+        .w(100%);
+        // width: 100%;
+        div,ul,form {
+            // margin: 0;
+            .m(0);
+            .p(0);
+            // padding: 0
+        }
+        a{
+            &:hover {
+                text-decoration: none
+            }
+            &.chart_icon {
+                // border: ;
+                .bor(1rem/@fontSize solid);
+                .h(16rem/@fontSize);
+                // padding: 0;
+                .p(0);
+                .w(16rem/@fontSize);
+                box-sizing:border-box;
+            }
+            &:hover {
+                border-width: 2rem/@fontSize;
+            }
+            &.chart_icon_theme_dark{
+                // background-color: #000;
+                .bc(@dark);
+            }
+            &.chart_icon_theme_light{
+                // background-color: #fff;
+                .bc(@white);
+            }
+        }
+        ul {
+            list-style: none;
+            border: 0;
+            // margin: 0;
+            // padding: 0
+            .m(0);
+            .p(0);
+        }
+        button {
+            cursor: pointer
+        }
+        .chart_dom_elem_cache {
+            *font-weight: bold;
+            // position: absolute;
+            .posa;
+            visibility: hidden;
+            z-index: -1
+        }    
+        .chart_toolbar {
+            border-bottom: 1rem/@fontSize solid;
+            *font-weight: bold;
+            // height: 29rem/@fontSize;
+            .h(29rem/@fontSize);
+            .posa;
+            // position: absolute;
+            z-index: 3
+        }        
+        .chart_toolbar_sep {
+            // float: left;
+            .fl;
+            .h(100%);
+            // height: 100%;
+            .w(16rem/@fontSize);
+            // width: 16rem/@fontSize
+        }
+        .chart_toolbar_minisep {
+            // float: left;
+            .fl;
+            height: 100%;
+            width: 4rem/@fontSize
+        }
+        .chart_dropdown {
+            display: inline-block;
+            .fl;
+            position: relative;
+            z-index: 100;
+        }
+        .chart_dropdown_t {
+            background-origin: content-box;
+            background-repeat: no-repeat;
+            border: 1rem/@fontSize solid;
+            border-bottom-width: 0;
+            margin-top: 3rem/@fontSize;
+            padding-right: 10rem/@fontSize;
+            z-index: 101;
+            position: relative;
+            a {
+                display: inline-block;
+                padding: 3rem/@fontSize 12rem/@fontSize 5rem/@fontSize 10rem/@fontSize
+            }
+        }
+        .chart_dropdown_data {
+            border: 1rem/@fontSize solid;
+            display: none;
+            position: absolute;
+            padding: 6rem/@fontSize 8rem/@fontSize 6rem/@fontSize 8rem/@fontSize;
+            margin-top: -1rem/@fontSize;
+            z-index: 100;
+            .bc(@white);
+            table {
+                border-collapse: collapse;
+                font-weight: normal;
+                white-space: nowrap;
+                tr{
+                    &:last-child td {
+                        border-bottom: 0
+                    }
+                }
+            }
+            td {
+                border-bottom: 1rem/@fontSize solid;
+                padding: 8rem/@fontSize 6rem/@fontSize;
+                vertical-align: top;
+                &.marketName_{
+                    a{
+                        &.dark {
+                            color: #fff
+                        }
+                        &.light {
+                            color: #000
+                        }
+                    }
+                }
+            }
+            li {
+                white-space: nowrap;
+                display: inline-block;
+                a{
+                    &.chart_icon_theme_dark{
+                        &:hover {
+                            background-color: #000
+                        }
+                    }
+                    &.chart_icon_theme_light{
+                        &:hover {
+                            background-color: #fff
+                        }
+                    }
+                }
+            }
+            a {
+                text-decoration: none;
+                cursor: pointer;
+                padding: 5rem/@fontSize 6rem/@fontSize 5rem/@fontSize 6rem/@fontSize;
+                &.chart_icon {
+                    display: inline-block;
+                    margin: 0 6rem/@fontSize 0 6rem/@fontSize
+                }
+            }
+        }
+        .market_chooser{
+            .chart_dropdown_data {
+                width: 370rem/@fontSize;
+                td {
+                    border-bottom: 1rem/@fontSize solid;
+                    padding: 1rem/@fontSize 6rem/@fontSize !important;
+                    vertical-align: top;
+                    line-height: 24rem/@fontSize
+                }
+            }
+            li {
+                float: left;
+                width: 80rem/@fontSize;
+                height: 24rem/@fontSize;
+                line-height: 24rem/@fontSize
+            } 
+        }
+        .chart_dropdown-hover{
+            &.chart_dropdown_data {
+                display: block
+            }
+        }
+        #chart_dropdown_symbols{
+            .chart_dropdown_data{
+                td {
+                    padding: 8rem/@fontSize 6rem/@fontSize 0 6rem/@fontSize;
+                    &:first-child {
+                        padding: 6rem/@fontSize 1rem/@fontSize 7rem/@fontSize 6rem/@fontSize
+                    }
+                }
+                li {
+                    display: block;
+                    height: 26rem/@fontSize
+                }
+                a {
+                    cursor: pointer
+                }
+            }
+        }
+        .chart_toolbar_label {
+            cursor: default;
+            /* display: inline-block; */
+            float: left;
+            padding: 7rem/@fontSize 4rem/@fontSize
+        }
+        .chart_toolbar_button {
+            border: 1rem/@fontSize solid;
+            cursor: pointer;
+            float: left;
+            margin: 3rem/@fontSize 2rem/@fontSize;
+            padding: 3rem/@fontSize 10rem/@fontSize;
+            position: relative;
+            z-index: 100
+        }
+        .chart_toolbar_tabgroup {
+            float: left;
+            li {
+                display: inline-block;
+                padding: 4rem/@fontSize 0;
+                margin: 3rem/@fontSize 0;
+                a {
+                    cursor: pointer;
+                    padding: 4rem/@fontSize 4rem/@fontSize;
+                    &:hover {
+                        text-decoration: none
+                    }
+                }
+            }
+        }
+        .chart_toolbar_periods_horz {
+            /* display: inline-block; */
+            float: left;
+            position: relative;
+            z-index: 100
+        }
+        .chart_toolbar_periods_vert {
+            float: left
+        }
+        .chart_toolbar_theme {
+            float: left;
+            padding: 0 8rem/@fontSize;
+            // display: none;
+            a{
+                &.chart_icon {
+                    cursor: pointer;
+                    float: left;
+                    margin: 6rem/@fontSize 4rem/@fontSize
+                }
+            }
+        }
+        .chart_select_theme{
+            td{
+                &:last-child {
+                    padding: 6rem/@fontSize 6rem/@fontSize 0 8rem/@fontSize
+                }
+            }
+            li {
+                padding: 0 4rem/@fontSize 0 4rem/@fontSize
+            }
+        }
+        .chart_toolpanel {
+            border-right: 1rem/@fontSize solid;
+            display: none;
+            position: absolute;
+            width: 32rem/@fontSize;
+            z-index: 2;
+            .chart_toolpanel_separator {
+                position: relative;
+                height: 4rem/@fontSize
+            }
+            .chart_toolpanel_button {
+                position: relative;
+                z-index: 100;
+                &:hover{
+                    .chart_toolpanel_tip {
+                        display: block
+                    }                    
+                }
+                .chart_DrawFibRetrace {
+                    background-position: 0 -280rem/@fontSize
+                }
+                &.selected{
+                    .chart_toolpanel_icon {
+                        background-image: url("/static/images/kline/tool_d_push.png")
+                    }
+                } 
+                .chart_toolpanel_icon {
+                    background-image: url("/static/images/kline/tool_d_normal.png")
+                }
+            }
+            .chart_toolpanel_icon {
+                background-origin: content-box;
+                background-repeat: no-repeat;
+                border: 1rem/@fontSize solid;
+                cursor: pointer;
+                height: 16rem/@fontSize;
+                margin: 1rem/@fontSize 4rem/@fontSize 1rem/@fontSize 4rem/@fontSize;
+                padding: 3rem/@fontSize;
+                position: relative;
+                width: 16rem/@fontSize;
+                z-index: 101
+            }
+            .chart_toolpanel_tip {
+                border-radius: 4rem/@fontSize;
+                border: 1rem/@fontSize solid;
+                display: none;
+                *font-weight: bold;
+                position: absolute;
+                padding: 3rem/@fontSize 6rem/@fontSize 4rem/@fontSize 6rem/@fontSize;
+                margin-left: 36rem/@fontSize;
+                margin-top: -25rem/@fontSize;
+                white-space: nowrap;
+                z-index: 100
+            }
+            .chart_Cursor {
+                background-position: 0 0
+            }
+            .chart_CrossCursor {
+                background-position: 0 -20rem/@fontSize
+            }
+            .chart_SegLine {
+                background-position: 0 -40rem/@fontSize
+            }
+            .chart_StraightLine {
+                background-position: 0 -60rem/@fontSize
+            }
+            .chart_RayLine {
+                background-position: 0 -100rem/@fontSize
+            }
+            .chart_ArrowLine {
+                background-position: 0 -80rem/@fontSize
+            }
+            .chart_HoriSegLine {
+                background-position: 0 -160rem/@fontSize
+            }
+            .chart_HoriStraightLine {
+                background-position: 0 -120rem/@fontSize
+            }
+            .chart_HoriRayLine {
+                background-position: 0 -140rem/@fontSize
+            }
+            .chart_VertiStraightLine {
+                background-position: 0 -180rem/@fontSize
+            }
+            .chart_PriceLine {
+                background-position: 0 -200rem/@fontSize
+            }
+            .chart_TriParallelLine {
+                background-position: 0 -220rem/@fontSize
+            }
+            .chart_BiParallelLine {
+                background-position: 0 -240rem/@fontSize
+            }
+            .chart_BiParallelRayLine {
+                background-position: 0 -260rem/@fontSize
+            }
+            .chart_DrawFibFans {
+                background-position: 0 -300rem/@fontSize
+            }
+        }
+        .chart_updated_time {
+            float: right;
+            margin: 4rem/@fontSize 3rem/@fontSize;
+            padding: 3rem/@fontSize 10rem/@fontSize
+        }
+        .chart_tabbar {
+            border-top: 1rem/@fontSize solid;
+            cursor: default;
+            display: none;
+            *font-weight: bold;
+            height: 22rem/@fontSize;
+            overflow: hidden;
+            position: absolute;
+            z-index: 1;
+            ul {
+                height: 100%;
+                list-style: none;
+                padding: 0 0 0 4rem/@fontSize;
+            }
+            li {
+                display: inline-block;
+                height: 100%;
+                margin: 0
+            }
+            a {
+                cursor: pointer;
+                display: inline-block;
+                height: 100%;
+                margin: 0;
+                padding: 3rem/@fontSize 4rem/@fontSize 0 4rem/@fontSize;
+                overflow: hidden;
+                &:hover {
+                    text-decoration: none
+                }
+            }
+        }
+        .chart_canvasGroup {
+            position: absolute;
+            z-index: 0
+        }
+        .chart_mainCanvas {
+            overflow: hidden;
+            position: absolute;
+            z-index: 0
+        }
+
+        .chart_overlayCanvas {
+            overflow: hidden;
+            position: absolute;
+            z-index: 2
+        }
+        // .chart_loading {
+        //     border: 1rem/@fontSize solid;
+        //     border-radius: 4rem/@fontSize;
+        //     font-size: 18rem/@fontSize;
+        //     font-weight: bold;
+        //     line-height: 48rem/@fontSize;
+        //     overflow: hidden;
+        //     position: absolute;
+        //     text-align: center;
+        //     // visibility: hidden;
+        //     width: 200rem/@fontSize;
+        //     z-index: 200;
+        //     &.activated {
+        //         visibility: visible
+        //     }
+        // }
+        .chart_parameter_settings {
+            border-radius: 4rem/@fontSize;
+            border: 1rem/@fontSize solid;
+            width: 100%;
+            position: absolute;
+            overflow: hidden;
+            visibility: hidden;
+            z-index: 500;
+            .chart_str_default {
+                margin-right: 24rem/@fontSize
+            }
+            &.clicked {
+                visibility: visible
+            }
+            h2 {
+                padding: 8rem/@fontSize 12rem/@fontSize;
+                margin: 0
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%
+            }
+            tr {
+                line-height: 32rem/@fontSize
+            }
+            th {
+                text-align: right;
+                padding: 0 4rem/@fontSize 0 16rem/@fontSize
+            }
+            input {
+                width: 2em;
+                margin: 0 2rem/@fontSize 0 2rem/@fontSize
+            }
+            .close_settings {
+                border-radius: 4rem/@fontSize;
+                cursor: pointer;
+                font-weight: bold;
+                text-align: center;
+                margin: 8rem/@fontSize auto;
+                padding: 5rem/@fontSize 24rem/@fontSize 5rem/@fontSize 24rem/@fontSize;
+                width: 84rem/@fontSize
+            }
+        }
+        input, button {
+            border-radius: 4rem/@fontSize;
+            border: 1rem/@fontSize solid;
+            padding: 4rem/@fontSize
+        }
+        input[type=text] {
+            width: 12em
+        }
+        input[type=button],
+        input[type=submit],
+        button {
+            font-family: arial, sans, serif;
+            padding: 4rem/@fontSize 8rem/@fontSize;
+            cursor: pointer
+        }        
+    }
+    &.dark{
+        input,button {
+            background-color: #151515;
+            border-color: #333;
+            color: #ccc
+        }
+        .chart_parameter_settings {
+            background-color: rgba(0, 0, 0, 0.9);
+            border-color: rgba(0, 0, 0, 0.9);
+            color: #ccc;
+            .close_settings {
+                background: #1887da;
+                color: #eee
+            }
+        }
+        .chart_loading {
+            border-color: #aaa;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ccc
+        }
+        .chart_tabbar {
+            background-color: #fff;/*底部工具条颜色*/
+            border-top-color: #000;
+            a {
+                color: #e5e5e5;
+                &:hover {
+                    background-color: #383838;
+                    color: #fff
+                }
+                &selected {
+                    color: #ffac00
+                }
+            }
+        }
+        .chart_toolbar {
+            /* background-color: #0a0a0a;  工具条背景色*/
+            background-color: #fff;
+            border-bottom-color: #404040;
+            .chart_BoxSize {
+                background: url("/static/images/kline/size_l.png") no-repeat;
+            }
+        }
+        .chart_dropdown_t {
+            background-image: url("/static/images/kline/dropdown_w.png");
+            background-position: right 9rem/@fontSize;
+            border-color: #0a0a0a;
+            color: #e5e5e5
+        }
+        .chart_dropdown-hover{
+            &.chart_dropdown_t {
+                background-color: #0a0a0a;
+                background-image: url("/static/images/kline/dropup_w.png");
+                background-position: right 8rem/@fontSize;
+                border-color: #606060;
+                color: #fff
+            }
+        }
+        .chart_dropdown_data {
+            background-color: rgba(10, 10, 10, 0.8);
+            border-color: #606060;
+            td {
+                border-bottom-color: #404040;
+                color: #e5e5e5
+            }
+            li{
+                a {
+                    color: #1987da;
+                    &:hover {
+                        background-color: #383838
+                    }
+                    &.selected {
+                        color: #ffac00
+                    }
+                }
+            }
+        }
+        .chart_toolbar_label {
+            border-color: #232323;
+            color: #e5e5e5
+        }
+        .chart_toolbar_button {
+            border-color: #404040;
+            color: #e5e5e5;
+            &:hover {
+                background-color: #383838;
+                border-color: #606060;
+                color: #fff
+            }
+            &.selected {
+                background-color: #383838;
+                border-color: #606060;
+                color: #ffac00;
+                &:hover {
+                    background-color: #474747;
+                    border-color: #808080;
+                    color: #ffac00
+                }
+            }
+        }
+        .chart_toolbar_tabgroup{
+            li{
+                a {
+                    color: #1987da;
+                    &:hover {
+                        background-color: #383838
+                    }
+                    &.selected {
+                        /* 时间range选中 时间颜色 */
+                        color: #444;
+                        font-weight: 700;
+                    
+                    }
+                }
+            }
+        }
+        a{
+            &.chart_icon {
+                border-color: #aaa;
+                &:hover {
+                    border-color: #1987da
+                }
+                &.selected {
+                    border-color: #ffac00
+                }
+            }
+        }
+        .chart_updated_time {
+            color: #e5e5e5
+        }
+        .chart_toolpanel {    
+            background-color: #fff;/* 工具条背景颜色 */
+            border-right-color: #404040;  
+            .chart_toolpanel_button{
+                &.selected{
+                    .chart_toolpanel_icon {
+                        background-image: url("/static/images/kline/tool_d_push.png")
+                    }
+                } 
+                .chart_toolpanel_icon {
+                    background-image: url("/static/images/kline/tool_d_normal.png")
+                }
+            } 
+                         
+        }
+        .chart_toolpanel_icon {
+            background-color: #fff; /* 工具条图标背景颜色  */
+            border-color: #0a0a0a
+        }
+        .chart_toolpanel_button{
+            &:hover,&.selected{
+                .chart_toolpanel_icon {
+                    background-color: #f3f9ff;/*工具条鼠标经过的颜色 */
+                    border-color: #666
+                }
+            }
+        }
+        .chart_toolpanel_tip {
+            background-color: #ffac00;
+            border-color: #ffac00;
+            color: #0a0a0a
+        }
+    }     
+    &.light{
+        input,button {
+            background-color: #ddd;
+            border-color: #ddd;
+            color: #222
+        }
+        .container{
+            span {
+                color: #333
+            }
+            a {
+                text-decoration: none;
+                color: #1478c8;
+                font-family: Arial, sans, serif
+            }
+        } 
+        .chart_parameter_settings {
+            background-color: rgba(244, 244, 244, 0.8);
+            border-color: #afb1b3;
+            color: #393c40;
+            .close_settings {
+                background: #1478c8;
+                color: #eee
+            }
+        }
+        .chart_loading {
+            border-color: #afb1b3;
+            background-color: rgba(244, 244, 244, 0.8);
+            color: #393c40
+        }
+        .chart_tabbar {
+            background-color: #fff;
+            border-top-color: #afb1b3;
+            a {
+                color: #393c40;
+                &:hover {
+                    background-color: #f4f4f4;
+                    color: #393c40
+                }
+                &.selected {
+                    color: #f27935
+                }
+            }
+        }
+        .chart_toolbar {
+            background-color: #fff;
+            border-bottom-color: #afb1b3;
+            .chart_BoxSize {
+                background: url("/static/images/kline/size_l.png") no-repeat;
+            }
+        }
+        .chart_dropdown_t {
+            background-image: url("/static/images/kline/dropdown_b.png");
+            background-position: right 10rem/@fontSize;
+            border-color: #fff;
+            color: #393c40
+        }
+        .chart_dropdown-hover{
+            .chart_dropdown_t {
+                background-color: #fff;
+                background-image: url("/static/images/kline/dropup_b.png");
+                background-position: right 9rem/@fontSize;
+                border-color: #4c4f53;
+                color: #393c40
+            }
+        }
+        .chart_dropdown_data {
+            background-color: #fff;
+            border-color: #4c4f53;
+            td {
+                border-bottom-color: #e4e5e6;
+                color: #393c40
+            }
+            li{
+                a {
+                    color: #1478c8;
+                    &:hover {
+                        background-color: #f4f4f4
+                    }
+                    &.selected {
+                        color: #f27935
+                    }
+                    
+                }
+            }
+        }
+        .chart_toolbar_label {
+            border-color: #fff;
+            color: #393c40
+        }
+        .chart_toolbar_button {
+            border-color: #ccc;
+            color: #393c40;
+            &:hover {
+                background-color: #f4f4f4;
+                color: #393c40
+            }
+            &.selected {
+                background-color: #f4f4f4;
+                border-color: #f27935;
+                color: #f27935
+            }
+        }
+        .chart_toolbar_tabgroup{
+            li{
+                a {
+                    /* 时间range 时间颜色 */
+                    color: #999;
+                    &:hover {
+                        background-color: #f4f4f4
+                    }
+                    &.selected {
+                        color: #f27935
+                    }
+                }
+            }
+        }
+        a{
+            &.chart_icon {
+                border-color: #aaa;
+                &.selected {
+                    border-color: #f27935
+                }
+            }
+        }
+        .chart_updated_time {
+            color: #393c40
+        }
+        .chart_toolpanel {
+            background-color: #fff;
+            border-right-color: #afb1b3;
+            .chart_toolpanel_button{
+                .chart_toolpanel_icon {
+                   background-image: url("/static/images/kline/tool_l_normal.png")
+                }
+               &.selected{
+                   .chart_toolpanel_icon {
+                    background-image: url("/static/images/kline/tool_l_push.png")
+                   }
+               }
+            }
+        }
+        .chart_toolpanel_icon {
+            background-color: #fff;
+            border-color: #fff
+        }
+        .chart_toolpanel_button{
+            &:hover,&.selected{
+                .chart_toolpanel_icon {
+                    background-color: #eee;
+                    border-color: #afb1b3
+                }
+            } 
+        }
+        .chart_toolpanel_tip {
+            background-color: #f27938;
+            border-color: #f27938;
+            color: #eee
+        }
+    }
+
+    .trade_container {
+        width: 250rem/@fontSize;
+        height: 100%;
+        float: right;
+        z-index: 99999;
+        font-size: 12rem/@fontSize;
+        overflow: hidden;
+        &.dark {
+            /* background: #0a0a0a;  深色皮肤背景 */
+            // background-color: #f3f9ff;
+            color: #f1f1f1;
+            .orderbook{
+                div{
+                    &.table{
+                        div{
+                            &.add{
+                                display: none;
+                                background-color: rgba(238, 238, 238, 0.2)
+                            }
+                            &.remove{
+                                g,span{
+                                    color: #444
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .trades_list{
+                ul{
+                    &.newul {
+                        display: none;
+                        background-color: rgba(238, 238, 238, 0.2)
+                    }
+                }
+            } 
+        }
+        &.light {
+            /* background: #0a0a0a; 㳀色皮肤背景 */
+            // background: #fff;
+            // border-left: 1rem/@fontSize solid #afb1b3;
+            color: #000;
+            .trades_list{
+                ul{
+                    li{
+                        &.tm {
+                           color: #333
+                       }
+                       &.pr-green {
+                            color: #6c6
+                        }
+                        &.pr-red {
+                            color: #c66
+                        }
+                        &.vl {
+                            color: #333;
+                            g {
+                                color: #333
+                            }
+                        }
+                    }
+                }
+            }
+            .orderbook{
+                div{
+                    &.table{
+                        div{
+                            &.add{
+                                display: none;
+                                background-color: rgba(100, 100, 100, 0.2)
+                            }
+                            &.remove{
+                                g,span{
+                                    color: #ddd
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // .m_righttop{
+            //     position: fixed;
+            //     top: 0;
+            //     height: 40rem/@fontSize;
+            //     line-height: 40rem/@fontSize;
+            //     background: #FFF;
+            //     width: 230rem/@fontSize;
+            //     border-bottom: 1rem/@fontSize solid #afb1b3;
+            //     text-align: right;
+            //     padding-right: 20rem/@fontSize;
+            //     em {
+            //        background-position: 0 -32rem/@fontSize
+            //    }
+            // }
+            // .m_rightbot {
+            //     background: #fff;
+            //     border-top: 1rem/@fontSize solid #afb1b3
+            // }
+            // .trades{
+            //     &.trades{
+            //         .v {
+            //             color: #333;
+            //             g {
+            //                 color: #333
+            //             }
+            //         }
+            //         table {
+            //             color: #333
+            //         }
+            //     }
+            // }
+            // .orderbook {
+            //     border-bottom: 1rem/@fontSize solid #afb1b3
+            // }
+            // .trades_list{
+            //     ul{
+            //         &.newul {
+            //             display: none;
+            //             background-color: rgba(100, 100, 100, 0.2)
+            //         }
+            //     }
+            // } 
+        }
+        .green {
+            /* 市场价颜色 */
+            color: #f00  
+        }
+        .red {
+            color: #F00
+        }
+    }
+    // .m_righttop {
+    //     position: fixed;
+    //     top: 0;
+    //     height: 41rem/@fontSize;
+    //     line-height: 41rem/@fontSize;
+    //     width: 230rem/@fontSize;
+    //     text-align: right;
+    //     padding-right: 20rem/@fontSize;
+    //     font-size: 16rem/@fontSize;
+    //     color: #f78d15;
+    //     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    //     em {
+    //         width: 123rem/@fontSize;
+    //         height: 28rem/@fontSize;
+    //         background-position: 0 0;
+    //         display: block;
+    //         float: right;
+    //         margin-top: 5rem/@fontSize
+    //     }
+    // }
+    .dark{
+        .m_righttop{
+            em {
+                background-position: 0 0
+            }
+        }
+    }
+    .light{
+        .m_guadan {
+            margin-top: 40rem/@fontSize;
+            overflow: hidden;
+            border-left: 1rem/@fontSize solid #afb1b3;
+            border-top: 1rem/@fontSize solid #afb1b3
+        }
+    }
+    .m_rightbot {
+        height: 22rem/@fontSize;
+        line-height: 22rem/@fontSize;
+        border-top: 1rem/@fontSize solid #404040;
+        width: 230rem/@fontSize;
+        text-align: right;
+        padding-right: 20rem/@fontSize;
+        background-color: #0a0a0a;
+        border-bottom-color: #404040
+    }
+    .m_guadan {
+        margin-top: 40rem/@fontSize;
+        overflow: hidden;
+        border-left: 1rem/@fontSize solid #404040;
+        // border-top: 1rem/@fontSize solid #404040;
+        a {
+            font-weight: bold;
+            color: #FFF;
+            text-decoration: none
+        }
+    }
+    .orderbook{
+        .asks,.gasks,.bids,.gbids {
+            height: 195rem/@fontSize;
+            position: relative;
+            display: inline-block;
+            overflow: hidden
+        }
+
+    } 
+    .symbol-title {
+        font-size: 14rem/@fontSize;
+        font-weight: bold;
+        text-align: center;
+        height: 16rem/@fontSize;
+        line-height: 16rem/@fontSize;
+        font-family: Arial, sans, serif;
+        padding: 5rem/@fontSize;
+        .dark {
+            color: #6BF
+        }
+        .infoDepth {
+            margin-left: 8rem/@fontSize;
+            color: #f78d15
+        }
+        a:hover {
+            text-decoration: underline
+        }
+    }
+    .asks,
+    .bids {
+        width: 150rem/@fontSize
+    }
+    .gasks,.asks{
+        .table {
+            bottom: 0
+        }
+    }
+    .gasks,
+    .gbids {
+        width: 80rem/@fontSize;
+        .amount {
+            float: right
+        }
+        .price {
+            float: left;
+            text-align: right
+        }
+    }
+    .orderbook {
+        padding-left: 3rem/@fontSize;
+        border-bottom: 1rem/@fontSize solid #222;
+        padding-bottom: 2rem/@fontSize;
+        margin-left: 5rem/@fontSize;
+        margin-bottom: 2rem/@fontSize;
+        .table {
+            position: absolute;
+            border-collapse: collapse;
+            padding: 0;
+            margin: 0;
+            .row {
+                padding: 0;
+                margin: 0;
+                height: 13rem/@fontSize;
+                line-height: 13rem/@fontSize;
+                font-family: Consolas, monospace
+            }
+            .g {
+                color: #666
+            }
+        }
+    }
+    .price {
+        margin-right: 10rem/@fontSize;
+        h {
+            visibility: hidden
+        }
+        g {
+            color: #666
+        }
+    }    
+    .price {
+        text-align: center;
+        font-size: 16rem/@fontSize;
+        font-weight: bold;
+        height: 25rem/@fontSize;
+        line-height: 25rem/@fontSize
+    }
+    .trades {
+        overflow-y: auto;
+        text-align: left;
+        color: #666;
+        padding-top: 5rem/@fontSize
+    }
+    .trades_list {
+        padding-left: 25rem/@fontSize;
+        ul {
+            width: 200rem/@fontSize;
+            height: 14rem/@fontSize;
+            line-height: 14rem/@fontSize;
+            text-align: left;
+            list-style: none;
+            clear: both;
+            zoom: 1;
+            margin: 0;
+            padding: 0;
+            li {
+                height: 14rem/@fontSize;
+                line-height: 14rem/@fontSize;
+                color: #999;
+                font-size: 12rem/@fontSize;
+                list-style: none;
+                float: left;
+                *display: inline;
+                margin: 0;
+                padding: 0;
+                font-family: Consolas, monospace;
+                &.tm {
+                    width: 62rem/@fontSize;
+                    color: #999
+                }
+                &.pr-green {
+                    width: 65rem/@fontSize;
+                    /* 交易列表 买入价颜色  */
+                    color: #6c6
+                }
+                &.pr-red {
+                    width: 65rem/@fontSize;
+                    /* 交易列表 卖出价颜色  */
+                    color: #c66
+                }
+                &.vl {
+                    width: 60rem/@fontSize;
+                     /* 交易列表 卖出价颜色小数点前  */
+                    color: #2d7bff;
+                    g {
+                        /* 交易列表 卖出价颜色小数点后  */
+                       color: #ff577a
+                   }
+                }
+            }
+        }
+    }
+    .container{
+        .nav {
+            margin: 0;
+            list-style: none;
+            padding: 0 0 0 3rem/@fontSize;
+            height: 41rem/@fontSize;
+            li {
+                display: inline-block;
+                margin-right: 9rem/@fontSize
+            }
+        }
+        a {
+            text-decoration: none;
+            color: #6BF;
+            font-family: Arial, sans, serif;
+            &:hover {
+                text-decoration: underline
+            }
+            &.active {
+                color: #FC9
+            }
+        }
+        span {
+            margin-left: 3rem/@fontSize;
+            font-family: Consolas, monospace;
+            color: #ccc
+        }
+    }
+    .chart_BoxSize {
+        width: 20rem/@fontSize;
+        height: 20rem/@fontSize
+    }    
+}

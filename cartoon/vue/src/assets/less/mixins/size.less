@@ -1,0 +1,31 @@
+// Sizing
+
+.size(@width; @height) {
+	width: @width * 1px;
+	height: @height * 1px;
+}
+
+.square(@size) {
+	.size(@size; @size);
+}
+
+// Simple
+.w(@width) {
+	width: @width * 1px;
+}
+.h(@height) {
+	height: @height * 1px;
+}
+.wh(@width; @height) {
+	.size(@width; @height);
+}
+.whb(@width; @height) {
+	.db;
+	.size(@width; @height);
+}
+.squ(@size) {
+	.size(@size; @size);
+}
+.oh () {
+	overflow: hidden;
+}

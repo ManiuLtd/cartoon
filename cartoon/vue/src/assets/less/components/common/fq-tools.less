@@ -1,0 +1,272 @@
+// 引入全局方法
+@import "../../common.less";
+.el-popover{
+    &.fq-tools-tooltip{
+        .p(0);
+        .msg-list{
+            li{
+                .bc(@hover-color);
+                .p(5px 15px);
+                .msg{
+                    .lh(18);
+                    .tl;
+                    .fz(12);
+                }
+                .time{
+                    .lh(20);
+                    opacity:.6;
+                }
+                &.title{
+                    .tc;
+                    .p(10px 0);
+                    .fw(700);
+                    .fz(15);
+                    .bc(@white);
+                    .red{
+                        .c(red);
+                        .pl(10);
+                    }
+                }
+                &.no-msg{
+                    .bc(@white);
+                    .tc;
+                    .p(30px 0);
+                    .fa-meiyouxiaoxiziyuan{
+                        .fz(30);
+                    }
+                }
+                &.btn-box{
+                    .df;
+                    .lh(50);
+                    .bc(@white);
+                    .el-button{
+                        .flex(1);
+                    }
+                }                 
+            }
+        }
+    }
+}
+.fq-tools-component{
+    .h(40);
+    .lh(40);
+    min-width: @container;
+    // .bc(@white);
+    .fz(14);
+    // .c(@default-txt-c);
+    .borb(1px solid @tools-b-c);
+    .left,.right{
+        // .fl;
+        li{
+            .fl;
+            .m(0 20px);
+            cursor: pointer;
+            &.no-login-box{
+                span{
+                    .p(0 10px);
+                }
+            }
+        }
+    }
+    .el-icon-arrow-down{
+        .c(@themes-c);
+        .fz(16);
+        .ml(3);
+    }
+    .icon-shangsheng{        
+        .c(@themes-c);
+        // .ml(1);
+        .pb(2);
+    }
+    .el-icon-message{
+        .c(@themes-c);
+        .mr(5);
+    }
+    .left{
+        .fl;
+    }
+    .right{
+        .fr;
+        // li{
+        //     .fl;
+        // }
+    }
+    li{
+        // &:hover[click]{
+        //     .c(@themes-bg-c);
+        // }
+        // &.assets{
+
+        // }
+        &.msg-box{
+            .posr;
+            // .el-button{
+            //     .p(0);
+            //     span{
+            //         .c(@default-txt-c);
+            //     }
+            // }            
+            .circle{
+                .posa;
+                right:-7px;
+                top:8px;
+                .squ(7);
+                .br(50%);
+                .bc(@red);
+            }
+        }
+
+        &.user-info{
+            .posr;
+            &:hover{
+                .list{
+                    .db;
+                }
+            }
+            .list{
+                .posa;
+                right:0;
+                z-index: 1;
+                min-width:160px;
+                .bc(@white);
+                .db(none);
+                .box-s(1px 1px 10px 2px rgba(0,0,0,.1));
+                .lh(30);
+                .p(5px 0);
+                li{
+                    float:none;
+                    &:hover{
+                        .c(@themes-c);
+                    }
+                    i{
+                        .ml(8);
+                    }              
+                }
+            }
+        }
+        &.list-box{
+            .posr;
+            .fz(14);
+            &.currency{
+                // .title{
+                    // text-indent:1em;
+                // }
+                .list{
+                    .w(60);
+                }
+            }
+            &.lang{
+                .title{
+                    background-repeat: no-repeat;
+                    .bp(left center);
+                    .bz(23px 14px);
+                    .pl(25);
+                }
+                .list{
+                    li{
+                        background-repeat: no-repeat;
+                        .bp(10px center);
+                        .bz(23px 14px);
+                        .pl(30);
+                    }
+                }
+            }
+            .list{
+                .db(none);
+                .bor(1px solid @f-border-color1);
+                .posa;
+                // top:31px;
+                left:0;
+                z-index:2;
+                .w(120%);
+                .bs;
+                .bc(@white);
+                // text-indent:1em;
+                li{
+                    .h(40);
+                    .lh(40);
+                    .m(0);
+                    float: none;
+                    text-indent:10px;
+                    // &:first-child{
+                    //     .c(@f-txt-color);
+                    // }
+                    &:hover{
+                        .bc(@default-txt-c);
+                        .c(@white);
+                    }
+                }
+            }
+            &:hover{
+                cursor: pointer;
+                .list{
+                    .db;
+                }
+            }
+            // .el-icon-caret-bottom{
+            //     .posa;
+            //     right:5px;
+            //     top:8px;
+            // }
+        }
+    }
+}
+.dark{
+    .el-popover{
+        .bor(none);
+        &.fq-tools-tooltip{
+            .msg-list{
+                li{
+                    .bc(@hover-color);
+                    &.title{
+                        .c(@white);
+                        .bc(@b-tool-bg);
+                        .red{
+                            .c(red);
+                        }
+                    }
+                    &.no-msg{
+                        .bc(@b-tool-bg);
+                        .fa-meiyouxiaoxiziyuan{
+                            .c(@white);
+                        }
+                    }
+                    &.btn-box{
+                        .bc(@b-tool-bg);
+                    }                 
+                }
+            }
+        }
+    }
+    .fq-tools-component{
+        .borbc(@b-tool-bor);
+        li{
+            &.msg-box{
+                .posr;         
+                .circle{
+                    .bc(@red);
+                }
+            }
+            &.user-info{
+                .list{
+                    .bor(none);
+                    .box-s(1px 1px 10px 2px rgba(0,0,0,.1));
+                    .bc(@b-tool-bg);
+                }
+            }
+            &.list-box{
+                .list{
+                    .bor(none);
+                    .box-s(1px 1px 10px 2px rgba(0,0,0,.1));
+                    .bc(@b-tool-bg);
+                    li{
+                        &:hover{
+                            .bc(@b-tool-bg);
+                            .c(@themes-c);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

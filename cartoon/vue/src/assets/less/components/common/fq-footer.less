@@ -1,0 +1,65 @@
+// 引入全局方法
+@import "../../common.less";
+.fq-footer-component{    
+    .df;
+    .posa;
+    z-index:110;
+    bottom:0;
+    .wh(100%;50rem/@fontSize);
+    .c(@btn-dis-bg-c);
+    .bc(@white);
+    .van-tabbar-item--active{
+        .c(@themes-bg-c);
+        .icon-market{
+            .bp(-2rem/@fontSize -2rem/@fontSize);
+        }
+        .icon-info{
+            .bp(-28rem/@fontSize -2rem/@fontSize);
+        }
+        .icon-exchange{
+            .bp(-53rem/@fontSize -2rem/@fontSize);
+        }
+        .icon-wallet{
+            .bp(-78rem/@fontSize -2rem/@fontSize);
+        }
+        .icon-my{
+            .bp(-104rem/@fontSize -2rem/@fontSize);
+        }
+    }
+    .icon{
+        // .squ(48rem/@fontSize);
+        .squ(24rem/@fontSize);
+        .m(0 auto);
+        .db;
+    }
+    .icon-market{
+        .bp(-2rem/@fontSize -25rem/@fontSize);
+    }
+    .icon-info{
+        .bp(-28rem/@fontSize -25rem/@fontSize);
+    }
+    .icon-exchange{
+        .bp(-53rem/@fontSize -25rem/@fontSize);
+    }
+    .icon-wallet{
+        .bp(-78rem/@fontSize -25rem/@fontSize);
+    }
+    .icon-my{
+        .bp(-104rem/@fontSize -25rem/@fontSize);
+    }
+}
+.app.iphoneX{
+    .fq-footer-component {
+        .pb(@iphoneX_B/@fontSize);
+    }
+}
+.app.androidX{
+    .fq-footer-component {
+        .pb(0);
+    }
+}
+
+.dark{
+    .fq-footer-component{
+    }
+}

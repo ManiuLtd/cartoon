@@ -1,0 +1,40 @@
+// Animation
+
+.transition(@Param: all ease .2s) {
+	-webkit-transition: @Param;
+	   -moz-transition: @Param;
+	   -ms-transition: @Param;
+	   -o-transition: @Param;
+			transition: @Param;
+}
+
+.animation(@Param) {
+	-webkit-animation: @Param;
+	   -moz-animation: @Param;
+	   -ms-animation: @Param;
+	   -o-animation: @Param;
+			animation: @Param;
+}
+
+.keyframes(@name; @arguments) {
+	@-webkit-keyframes @name { @arguments(); }
+	   @-moz-keyframes @name { @arguments(); }
+	   @-ms-keyframes @name { @arguments(); }
+	   @-o-keyframes @name { @arguments(); }
+	        @keyframes @name { @arguments(); }
+}
+
+// Simple
+.tran(@Param: all ease .2s) {
+	.transition(@Param);
+}
+.anime(@Param) {
+	.animation(@Param);
+}
+
+// demo
+//.keyframes(rotate-inf; {
+//	0%   { .rotate(0); }
+//	100% { .rotate(720); }
+//});
+//.anime(rotate-inf 1.6s ease infinite);

@@ -1,0 +1,106 @@
+// 引入全局方法
+@import "../common.less";
+.fq-index-page{
+    h2{
+        .ml(10rem/@fontSize);
+        .fz(14rem/@fontSize);
+    }
+    .van-list{
+        .df;
+        flex-wrap: wrap;
+        .van-cell{
+            .mb(10rem/@fontSize);
+            .p(0);
+            .flex(1);
+            .mr(10rem/@fontSize);
+            .bor(1rem/@fontSize solid rgb(20, 116, 100));
+            // max-width: 50%;
+            min-width: 45%;
+            &:nth-child(2n+1){
+                .ml(10rem/@fontSize);
+                // .mr(5rem/@fontSize);
+            }
+            // &:nth-child(2n+2){
+            //     .mr(10rem/@fontSize);
+            //     .ml(5rem/@fontSize);
+            // }
+            .van-cell__value{
+                .df;
+                .img-box{
+                    .m(10rem/@fontSize);
+                    .flex(1);
+                    .tc;
+                    img{
+                        .w(100%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// .app.iphoneX{
+//     .fq-index-page{
+//         .pt((20rem+@iphoneX)/@fontSize);
+//         .pb((50rem+@iphoneX_B)/@fontSize);
+//         .tabs-box{
+//             .index-top-van-tabs{
+//                 &>.van-tabs__wrap{
+//                     .pt((20rem+@iphoneX)/@fontSize);
+//                 }
+//                 .van-tabs__content{
+//                 //    top:(44rem+@iphoneX)/@fontSize;
+//                     .van-tabs--line{
+//                         .pt((54rem+@iphoneX)/@fontSize);
+//                         .van-tabs__wrap{
+//                             .mt((118rem+@iphoneX)/@fontSize);
+//                         }
+//                         .van-tabs__content{
+//                             .pt((64rem+44rem+@iphoneX)/@fontSize);
+//                             .index-header {
+//                                 top: (64rem+54rem+44rem+@iphoneX)/@fontSize;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//             }
+//         }
+//         .van-search{
+//             top:(64rem+@iphoneX)/@fontSize;
+//         }
+//     }
+// }
+
+
+// .app.androidX{
+//     .fq-index-page{
+//         .pt((20rem+@androidX)/@fontSize);
+//         .tabs-box{
+//             .index-top-van-tabs{
+//                 &>.van-tabs__wrap{
+//                     .pt((20rem+@androidX)/@fontSize);
+//                 }
+//                 .van-tabs__content{
+//                     //    top:(44rem+@androidX)/@fontSize;
+//                     .van-tabs--line{
+//                         .pt((54rem+@androidX)/@fontSize);
+//                         .van-tabs__wrap{
+//                             .mt((118rem+@androidX)/@fontSize);
+//                         }
+//                         .van-tabs__content{
+//                             .pt((64rem+44rem+@androidX)/@fontSize);
+//                             .index-header {
+//                                 top: (64rem+54rem+44rem+@androidX)/@fontSize;
+//                             }
+//                         }
+//                     }
+//                 }
+
+//             }
+//         }
+//         .van-search{
+//             top:(64rem+@androidX)/@fontSize;
+//         }
+//     }
+// }
