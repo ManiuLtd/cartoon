@@ -100,77 +100,83 @@
                 </van-tab>
             </van-tabs>      
 
-            <van-tabs v-model="secondActive">
+            <van-tabs v-model="topActive" sticky>
                 <van-tab title="日本动漫排行">
-                    <!-- <van-list>
-                        <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
+                    <van-list v-if="topList&&topList.length>0&&topList[0]&&topList[0].length>0">
+                        <van-cell v-for="(item, index) in topList[0]" :key="index" @click="jumpToDetail(item)">
                             <div class="img-box">
                                 <img v-lazy="item.logo"/>
                                 {{item.name}}
                             </div>
                         </van-cell>
-                    </van-list> -->
+                    </van-list>
                 </van-tab>
-                <van-tab title="日本好看的动漫">
-                    <!-- <van-list>
-                        <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
+                <van-tab title="国产漫画排行"> 
+                    <van-list v-if="topList&&topList.length>0&&topList[1]&&topList[1].length>0">
+                        <van-cell v-for="(item, index) in topList[1]" :key="index" @click="jumpToDetail(item)">
                             <div class="img-box">
                                 <img v-lazy="item.logo"/>
                                 {{item.name}}
                             </div>
                         </van-cell>
-                    </van-list> -->
-                </van-tab>
-                <van-tab title="国产漫画排行">
-                    <!-- <van-list>
-                        <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
-                            <div class="img-box">
-                                <img v-lazy="item.logo"/>
-                                {{item.name}}
-                            </div>
-                        </van-cell>
-                    </van-list> -->
-                </van-tab>
-                <van-tab title="国产好看的漫画">
-                    <!-- <van-list>
-                        <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
-                            <div class="img-box">
-                                <img v-lazy="item.logo"/>
-                                {{item.name}}
-                            </div>
-                        </van-cell>
-                    </van-list> -->
+                    </van-list>
                 </van-tab>
                 <van-tab title="欧美漫画排行">
-                    <!-- <van-list>
-                        <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
+                    <van-list v-if="topList&&topList.length>0&&topList[2]&&topList[2].length>0">
+                        <van-cell v-for="(item, index) in topList[2]" :key="index" @click="jumpToDetail(item)">
                             <div class="img-box">
                                 <img v-lazy="item.logo"/>
                                 {{item.name}}
                             </div>
                         </van-cell>
-                    </van-list> -->
+                    </van-list>
+                  </van-tab>
+            </van-tabs>   
+            <van-tabs v-model="secondActive" sticky>
+                <van-tab title="日本好看的漫画">                    
+                    <van-list v-if="icmd_txt_list&&icmd_txt_list.length>0&&icmd_txt_list&&icmd_txt_list.length>0">
+                        <van-cell v-for="(item, index) in icmd_txt_list" :key="index" @click="jumpToDetail(item)">
+                            <div class="img-box">
+                                <img v-lazy="item.logo"/>
+                                {{item.name}}
+                            </div>
+                        </van-cell>
+                    </van-list>
                 </van-tab>
-                <van-tab title="欧美好看的漫画">
-                    <!-- <van-list>
-                        <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
+                <van-tab title="国产好看的漫画">                    
+                    <van-list v-if="icmd_cover_list&&icmd_cover_list.length>0&&icmd_cover_list[0]&&icmd_cover_list[0].length>0">
+                        <van-cell v-for="(item, index) in icmd_cover_list[0]" :key="index" @click="jumpToDetail(item)">
                             <div class="img-box">
                                 <img v-lazy="item.logo"/>
                                 {{item.name}}
                             </div>
                         </van-cell>
-                    </van-list> -->
+                    </van-list>
+                </van-tab>
+                <van-tab title="欧美好看的动漫">
+                    <van-list v-if="icmd_cover_list&&icmd_cover_list.length>0&&icmd_cover_list[1]&&icmd_cover_list[1].length>0">
+                        <van-cell v-for="(item, index) in icmd_cover_list[1]" :key="index" @click="jumpToDetail(item)">
+                            <div class="img-box">
+                                <img v-lazy="item.logo"/>
+                                {{item.name}}
+                            </div>
+                        </van-cell>
+                    </van-list>
                 </van-tab>
             </van-tabs>       
             <h2>漫画大全 - 按字母索引推荐</h2>     
-            <!-- <van-list>
-                <van-cell v-for="(item, index) in hotUpdateList" :key="index" @click="jumpToDetail(item)">
-                    <div class="img-box">
-                        <img v-lazy="item.logo"/>
-                        {{item.name}}
-                    </div>
-                </van-cell>
-            </van-list> -->
+            <van-tabs v-model="thirdActive" sticky>
+                <van-tab :title="key" v-for="(list, key,index) in ichr_listMap" :key="index">                    
+                    <van-list v-if="list&&list.length>0&&list&&list.length>0">
+                        <van-cell v-for="(item, index) in list" :key="index" @click="jumpToDetail(item)">
+                            <div class="img-box">
+                                <img v-lazy="item.logo"/>
+                                {{item.name}}
+                            </div>
+                        </van-cell>
+                    </van-list>
+                </van-tab>
+            </van-tabs> 
         </div>
     </div>
 </template>
@@ -198,8 +204,14 @@
                 hotUpdateList:[],//好看的漫画热门更新推荐
                 icmd_list:[],//热门连载漫画
                 newUpdateList:[],//最近更新漫画
+                topList:[],//左边排行
+                icmd_txt_list:[],//日本好看的动漫
+                icmd_cover_list:[],//国产，欧美好看动漫
+                ichr_listMap:{},//字母排序动漫
                 firstActive:0,
+                topActive:0,
                 secondActive:0,
+                thirdActive:0,
             }
         },
         mounted() {
@@ -211,7 +223,7 @@
             }else{
                 let count=0
                 for(let i in indexData){
-                    if(i!='courselist'){
+                    if(i!='courselist'&&i!='ichr_listMap'){
                         let list=indexData[i]
                         that[i]=list
                         if(list&&list.length>0){
@@ -288,14 +300,30 @@
                         newUpdateList.push({logo:logo,id:id,name:name})
                     })
                     that.newUpdateList=newUpdateList
-                    
+
+                    let icmd_txt_listObj=doc.find('.icmd_txt_list li')
+                    let icmd_txt_list=[]
+                    $.each(icmd_txt_listObj,(index,item)=>{
+                        let a=$(item).find('.video')
+                        let href=a.attr('href')||''
+                        let id=href.replace(/\/.*\/(\d+)\//g,($0,$1)=>{
+                            return $1
+                        })
+                        let imgurl=a.attr('i')
+                        let logo=imgurl.indexOf('http://')<0?'http://www.chuixue.net/'+imgurl:imgurl                   
+                        let name=a.html()
+                        icmd_txt_list.push({logo:logo,id:id,name:name})
+                    })
+                    that.icmd_txt_list=icmd_txt_list
+
+                                        
                     let icmd_listObj=doc.find('#icmd_list>ul')
                     let icmd_list=[]
-                    $.each(newUpdateObj,(index,item)=>{
+                    $.each(icmd_listObj,(index,item)=>{
                         let lis=$(item).find('li')
                         let list=[]
                         $.each(lis,(j,li)=>{
-                            let a=$(li).find('a')
+                            let a=$(li).find('.pic')
                             let img=$(a).find('img')
                             let href=a.attr('href')||''
                             let id=href.replace(/\/.*\/(\d+)\//g,($0,$1)=>{
@@ -311,6 +339,79 @@
                         icmd_list[index]=list
                     })
                     that.icmd_list=icmd_list
+
+
+                    let topListObj=doc.find('.topList ul')
+                    let topList=[]
+                    $.each(topListObj,(index,item)=>{
+                        let lis=$(item).find('li')
+                        let list=[]
+                        $.each(lis,(j,li)=>{
+                            let a=$(li).find('.vtip')
+                            // let img=$(a).find('i')
+                            let href=a.attr('href')||''
+                            let id=href.replace(/\/.*\/(\d+)\//g,($0,$1)=>{
+                                return $1
+                            })
+                            let imgurl=a.attr('i')
+                            let logo=imgurl.indexOf('http://')<0?'http://www.chuixue.net/'+imgurl:imgurl
+                            // if(logo.indexOf('loading.gif')>-1){
+                            //     logo=img.attr('_src')
+                            // }
+                            let name=a.html()
+                            list.push({logo:logo,id:id,name:name})
+                        })
+                        topList[index]=list
+                    })
+                    that.topList=topList
+
+                    let icmd_cover_listObj=doc.find('.icmd_cover_list ul')
+                    let icmd_cover_list=[]
+                    $.each(icmd_cover_listObj,(index,item)=>{
+                        let lis=$(item).find('li')
+                        let list=[]
+                        $.each(lis,(j,li)=>{
+                            let a=$(li).find('.pic')
+                            let img=$(a).find('img')
+                            let href=a.attr('href')||''
+                            let id=href.replace(/\/.*\/(\d+)\//g,($0,$1)=>{
+                                return $1
+                            })
+                            let logo=img.attr('src')
+                            if(logo.indexOf('loading.gif')>-1){
+                                logo=img.attr('_src')
+                            }
+                            let name=img.attr('alt')
+                            list.push({logo:logo,id:id,name:name})
+                        })
+                        icmd_cover_list[index]=list
+                    })
+                    that.icmd_cover_list=icmd_cover_list
+
+                    let ichr_listObj=doc.find('.ichr_list')
+                    let ichr_listMap={}
+                    $.each(ichr_listObj,(index,item)=>{
+                        let lis=$(item).find('ul>li')
+                        let h5=$(item).find('h5')
+                        let key=h5.html()                      
+                        let list=[]
+                        $.each(lis,(j,li)=>{
+                            let a=$(li).find('.video')
+                            // let img=$(a).find('img')
+                            let href=a.attr('href')||''
+                            let id=href.replace(/\/.*\/(\d+)\//g,($0,$1)=>{
+                                return $1
+                            })
+                            let imgurl=a.attr('i')
+                            let logo=imgurl.indexOf('http://')<0?'http://www.chuixue.net/'+imgurl:imgurl
+                            let name=a.html()
+                            list.push({logo:logo,id:id,name:name})
+                        })
+                        ichr_listMap[key]=list
+                    })
+                    that.ichr_listMap=ichr_listMap
+
+                    // fqCommon.error('icmd_cover_list',that.icmd_cover_list)
                     // let list=doc.find('div.pmedium.plist>ul li')
                     // let articleList=[]
                     // $.each(list,(index,item)=>{
@@ -331,6 +432,10 @@
                         icmd_list:that.icmd_list,
                         courselist:that.courselist,
                         newUpdateList:that.newUpdateList,
+                        topList:topList,//左边排行
+                        icmd_txt_list:icmd_txt_list,//日本好看的动漫
+                        icmd_cover_list:icmd_cover_list,//国产，欧美好看动漫
+                        ichr_listMap:ichr_listMap,//字母排序动漫
                     })
                 }).catch(err=>{
                     that.dataLoadingStatus=false
